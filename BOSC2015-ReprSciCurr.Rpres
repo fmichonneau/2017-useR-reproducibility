@@ -1,114 +1,158 @@
-Reproducible Science Workshop - Intro I
-========================================================
+A curriculum for teaching Reproducible Computational Science bootcamps
+=====
 font-family: 'Helvetica'
-date: 'enter date'
+
+Hilmar Lapp, Center for Genomic and Computational Biology, Duke University<br/>
+Participants of the Reproducible Science Curriculum Hackathon<br/>
+<p style="font-size: small; text-align: center">BOSC 2015, Dublin, Ireland
+<br/>
+<!-- public domain dedication copied from CC -->
+  <a rel="license"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+  </a>
+</p>
+
+Reproducibility matters
+=====
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+
+Reproducibility crisis
+=====
 
 
-Overview
-========================================================
+Reproducibility matters
+=====
 
-Tagline: Accelerating scientific progress through reproducible science
+Lack of reproducibility in science causes significant issues
 
-Mission: To train researchers in the best practices and approaches of reproducible research and accelerate scientific progress.
+* For science as an enterprise
+* For other researchers in the community
+* For public policy
 
+Science retracts gay marriage paper
+=====
 
-Schedule
-========================================================
+* Science retracted (without lead author's consent) a study of how
+  canvassers can sway people's opinions about gay marriage
 
-Day 1
+* Original survey data was not made available for independent
+  reproduction of results (and survey incentives misrepresented, and
+  sponsorship statement false)
 
-- 09:00: Introduction to Reproducible Research
-- 10:30: Coffee / R&RStudio install catch up
-- 12:30: Lunch break
-- 13:30: Organizing your project to facilitate Reproducible Research
-- 15:00: Coffee
-- 17:00: Wrap-up
-
-* * *
-
-Day 2
-
-- 09:00: Automating your workflows
-- 10:30: Coffee
-- 12:30: Lunch break
-- 13:30: Sharing and publishing your research workflow
-- 15:00: Coffee
-- 16:30: Wrap-up
-
-
-Intro to Reproducible Research
-========================================================
-
-**Before coffee break:**
-- Getting to know you
-- **Case study**: Recognize the problems that reproducible research helps address via a case study
-- **Exercise I**: Identify pain points in getting your analysis to be reproducible
-
-* * *
-
-**After coffee break:**
-- Introducing some tools to solve these problems, specifically R/RStudio/RMarkdown
-- Revisit Exercise I with new tools
-- **Exercise II**: The role of documentation, sharing, automation, and organization in making your research more reproducible
-
-
-Getting to know you...
-========================================================
-
-with respect to reproducibility
-
-
-Why should we care?
-========================================================
-
-Examples of irreproducible research has caused significant issues
-
-
-Science retracts gay marriage paper without agreement of lead author
-========================================================
-
-* Science retracted a study of how canvassers can sway people's opinions about 
-gay marriage.
-
-* Science Editor-in-Chief: Original survey data not made available for independent
-reproduction of results + Survey incentives misrepresented + Sponsorship statement 
-false
-
-* Two Berkeley grad students attempted to replicate the study and discovered that 
-the data must have been faked.
-
-* Methods we'll discuss today can't prevent this, but they can make it easier to 
-discover such issues.
+* Two Berkeley grad students attempted to replicate the study and
+  discovered that the data must have been faked.
 
 Source: 
 http://news.sciencemag.org/policy/2015/05/science-retracts-gay-marriage-paper-without-lead-author-s-consent
 
+Reproducibility matters
+=====
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+* For public policy
+* For patients
 
 Seizure study retracted after authors realize data got "terribly mixed"
-========================================================
+=====
 
 From the authors of **Low Dose Lidocaine for Refractory Seizures in Preterm Neonates**:
 
-*"The article has been retracted at the request of the authors. After carefully re-examining the data presented in the article, they identified that data of two different hospitals got terribly mixed. The published results cannot be reproduced in accordance with scientific and clinical correctness."*
+> The article has been retracted at the request of the authors. After carefully re-examining the data presented in the article, they identified that data of two different hospitals got terribly mixed. The published results cannot be reproduced in accordance with scientific and clinical correctness.
 
 Source: http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/
 
 
 Bad spreadsheet merge kills depression paper, quick fix resurrects it
-========================================================
+=====
 
-* The authors informed the journal that the merge of lab results and other survey data 
-used in the paper resulted in an error regarding the identification codes.
+* The authors informed the journal that the merge of lab results and
+  other survey data used in the paper resulted in an error regarding
+  the identification codes.
 
-* **Original conclusion:** Lower levels of CSF IL-6 were associated with current 
-depression and with future depression [...].
+* **Original conclusion:** Lower levels of CSF IL-6 were associated
+  with current depression and with future depression [...].
 
-* **Revised conclusion:** Higher levels of CSF IL-6 and IL-8 were associated with 
-current depression [...].
+* **Revised conclusion:** Higher levels of CSF IL-6 and IL-8 were
+  associated with current depression [...].
 
 Source: 
 http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depression-paper-quick-fix-resurrects-it/
 
+Reproducibility matters
+=====
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+* For policy making
+* For patients
+* For oneself as a researcher
+
+Accelerating the progress of science through reproducibility
+=====
+
+
+Reproducibility is particularly challenging for computatioal research
+=====
+
+
+The technology soup can be bewildering
+=====
+
+
+Reproducible Science Curriculum Workshop & Hackathon
+=====
+
+
+Key concepts underlying the curriculum
+=====
+
+
+
+
+Syllabus v1.0
+=====
+
+
+Syllabus v1.1
+=====
+
+
+Observations, feedback and lessons learned
+=====
+
+
+Tools and practices coming into the workshop cover a wide spectrum
+=====
+
+
+Need lessons using iPython
+=====
+
+
+Plans for next 6 months
+=====
+
+* Material development sprint & workshop
+* Teaching more workshops
+
+Sustaining and growing the effort
+=====
+
+
+Acknowledgements
+=====
+
+* Sophie (Kershaw) Kay - [Rotation Based Learning](http://www.opensciencetraining.com/content.php)
 
 Exercise 1: Motivating reproducibility
 ========================================================
@@ -118,26 +162,6 @@ This is a two-part exercise:
 **Part 1:** Analyze + document
 
 **Part 2:** Swap + discuss
-
-
-Exercise 1 - Part 1
-========================================================
-
-Complete the following tasks and write instructions/documentation for your 
-collaborator to reproduce your work starting with the original dataset (`data/gapminder-5060.csv`)
-
-1. Visualize life expectancy over time for Canada in the 1950s and 1960s using 
-a line plot.<br>
-*Stretch goal:* Add lines for Mexico and US.
-
-2. Visualize the relationship between GDP and life expectancy for countries in 
-Europe in 1952.<br>
-*Stretch goal:* Add a line for 1967 in another color.
-
-<center>
-Put a pink sticky on your laptop <br>
-for help with R/RStudio installation
-</center>
 
 
 Exercise 1 - Part 2
@@ -174,13 +198,9 @@ Exercise 1 - Wrap up
 * What would happen if your collaborator is no longer available to walk you through their analysis?
 
 
-Coffee break
-========================================================
 
-<center>
-<br>
-![coffee](img/coffee_000000_264.png)
-<br>
-Put a pink sticky on your laptop <br>
-for help with R/RStudio installation
-</center>
+Tagline: Accelerating scientific progress through reproducible science
+
+Mission: To train researchers in the best practices and approaches of reproducible research and accelerate scientific progress.
+
+
