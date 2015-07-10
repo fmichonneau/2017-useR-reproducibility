@@ -1,0 +1,88 @@
+.reveal section h1 {
+    text-align: center;
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+}
+
+.midcenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.twocolspan {
+    position: fixed;
+    top: 85%;
+    left: 0%;
+    width: 100%;
+}
+
+.highlight {
+    text-align: center;
+    background-color: #ddeeff;
+    padding: 10px;
+}
+
+.reveal .centered-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titleonly .reveal .state-background {
+   background: #96A2B6;
+}
+
+.titleonly .reveal h1,
+.titleonly .reveal h2,
+.titleonly .reveal h3 {
+    font-size: 270%;
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    line-height: 1.1em;
+}
+
+.titleonly .reveal p {
+    font-size: 200%;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.reveal section .smaller {
+    font-size: 90%;
+}
+
+.reveal section .level6 {
+    font-size: 160%;
+}
+
+.reveal section .level5 {
+    font-size: 125%;
+}
+
+.reveal section .level4 {
+    font-size: 95%;
+}
+
+.reveal section .level3 {
+    font-size: 75%;
+}
+
+.reveal section .level2 {
+    font-size: 50%;
+}
+
+.reveal section .level1 {
+    font-size: 30%;
+}
+
+.level0 {
+    font-size: 10%;
+}
