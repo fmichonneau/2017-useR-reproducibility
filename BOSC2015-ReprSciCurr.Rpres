@@ -25,7 +25,7 @@ Reproducibility crisis
 * Effect size overestimation is common
 
 ***
-![Nature Special Issue on Challenges in Irreproducible Research](media/Nature-special-issue.png)
+[![Nature Special Issue on Challenges in Irreproducible Research](media/Nature-special-issue.png)](http://www.nature.com/nature/focus/reproducibility/index.html)
 
 Reproducibility matters
 =====
@@ -67,11 +67,12 @@ Lack of reproducibility in science causes significant issues
 Seizure study retracted after authors realize data got "terribly mixed"
 =====
 
-From the authors of **Low Dose Lidocaine for Refractory Seizures in Preterm Neonates**:
+From the authors of **Low Dose Lidocaine for Refractory Seizures in
+Preterm Neonates** ([doi:10.1007/s12098-010-0331-7](http://dx.doi.org/10.1007/s12098-010-0331-7):
 
 > The article has been retracted at the request of the authors. After carefully re-examining the data presented in the article, they identified that data of two different hospitals got terribly mixed. The published results cannot be reproduced in accordance with scientific and clinical correctness.
 
-Source: http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/
+Source: [Retraction Watch](http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/)
 
 Reproducibility matters
 =====
@@ -139,7 +140,7 @@ class: centered-image
 
 <p class="highlight" style="font-size: 200%; margin-bottom: 60px;">To develop an open source curriculum for a two-day workshop on reproducibility for computational research</p>
 
-[![Reproducible Science Curriculum logo](http://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
+[![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
 
 Reproducible Science Curriculum Workshop & Hackathon
 =====
@@ -179,7 +180,7 @@ type: titleonly
 1. Benefits first accrue to researcher
 =====
 
-[![](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
+[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
 <small>Bruno Oliviera</small>
 
 ***
@@ -211,7 +212,7 @@ Provenance with results pasted into manuscript:
 ***
 
 vs. Provenance of figures with Rmarkdown reports:
-![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)
+[![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
 4. One dataset throughout
 =====
@@ -378,6 +379,5 @@ The repository is archived on Zenodo: http://dx.doi.org/10.5281/zenodo.17844
 ***
 
 <p/>
-![](media/Rstudio-of-prez.png)
+![Rstudio screenshot of this presentation](media/Rstudio-of-prez.png)
 [![RStudio Logo](https://www.rstudio.com/wp-content/uploads/2014/03/blue-250.png)](https://www.rstudio.com)
-
