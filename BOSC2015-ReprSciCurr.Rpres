@@ -39,7 +39,6 @@ Lack of reproducibility in science causes significant issues
 
 Science retracts gay marriage paper
 =====
-type: subsection
 
 * Science retracted (without lead author's consent) a study of how
   canvassers can sway people's opinions about gay marriage
@@ -89,7 +88,8 @@ Reproducibility = Accelerating science
 =====
 right: 60%
 
-* If my research is difficult to reproduce it impedes my lab, and my future self.
+* If my research is difficult to reproduce it impedes my lab, and my
+  future self.
 
 > Any work you do to make your analysis more reproducible pays dividends for colleagues and your future self.
 
@@ -104,8 +104,10 @@ Reproducible computational research is challenging
 
 <p/>
 * Most software has many dependencies, any one of which can fail to install.
-* Gaps and errors in docs may be harmless for experts, but are often fatal for "method novices".
-* Software evolution means that parameters that worked a year ago may now throw an error.
+* Gaps and errors in docs may be harmless for experts, but are often
+  fatal for "method novices".
+* Software evolution means that parameters that worked a year ago may
+  now throw an error.
 * Dependency hell: baseline software and packages differ from one to another.
 
 ***
@@ -153,8 +155,11 @@ Reproducible Science Curriculum Workshop & Hackathon
 
 <p/>
 * Held December 11-14 at NESCent in Durham, NC
-* Two days brainstorming / unconference, followed by two days curriculum development
-* 21 participants comprising statisticians, biologists, bioinformaticians, open-science activists, programmers, graduate students, postdocs, untenured and tenured faculty
+* Two days brainstorming / unconference, followed by two days
+  curriculum development
+* 21 participants comprising statisticians, biologists,
+  bioinformaticians, open-science activists, programmers, graduate
+  students, postdocs, untenured and tenured faculty
 
 Reproducible Science Curriculum Workshop & Hackathon
 =====
@@ -223,8 +228,10 @@ vs. Provenance of figures with Rmarkdown reports:
 =====
 
 <br/>
-* For scientists just starting with data workflows, raise them so that they do not have workflows other than reproducible ones.
-* For scientists who already have their workflows, convince and train them to adopt more reproducible ones.
+* For scientists just starting with data workflows, raise them so that
+  they do not have workflows other than reproducible ones.
+* For scientists who already have their workflows, convince and train
+  them to adopt more reproducible ones.
 
 Curriculum is suitable for both.
 
@@ -271,8 +278,10 @@ Syllabus v1.1
 
 <br/>
 * Earlier introduction of literate programming
-* More exercise time on using literate programming reports for executable documentation
-* Started Day 2 with 90 minutes on version control and collaboration using Git and Github
+* More exercise time on using literate programming reports for
+  executable documentation
+* Started Day 2 with 90 minutes on version control and collaboration
+  using Git and Github
 
 Observations, feedback and lessons learned
 =====
@@ -284,7 +293,8 @@ Unexpectly strong demand and interest
 <br/>
 <br/>
 * For first workshop held at Duke, 30 seats filled up in less than 24 hours.
-* Ended up with >20 on waiting list, and several inquiries about when the workshop will be repeated.
+* Ended up with >20 on waiting list, and several inquiries about when
+  the workshop will be repeated.
 * Second workshop (held at U. Florida) filled up. too.
 
 Tools and practices coming into the workshop cover a wide spectrum
@@ -318,8 +328,10 @@ Don't be afraid of version control
 
 <br/>
 * Some students had heard about version control. Almost none had practiced it.
-* Nonetheless, it was the most consistently and most frequently mentioned topic in feedback cards for wanting to hear about. 
-* If you don't teach it, it will be asked for. But it is challenging to teach effectively to novices in 90 minutes or less.
+* Nonetheless, it was the most consistently and most frequently
+  mentioned topic in feedback cards for wanting to hear about.
+* If you don't teach it, it will be asked for. But it is challenging
+  to teach effectively to novices in 90 minutes or less.
 
 Need lessons using iPython
 =====
@@ -338,7 +350,9 @@ Future plans
 =====
 
 * Material development sprint & workshop:
-    * Tweaking design of exercises to be shorter, and have more emphasis on skill development than realizing what the problems are.
+    * Tweaking design of exercises to be shorter, and have more
+      emphasis on skill development than realizing what the problems
+      are.
     * Refining Git/Github lesson for the short time alloted to it.
 * Teaching more workshops
 * Expanding instructor pool
