@@ -1,0 +1,397 @@
+A curriculum for teaching Reproducible Computational Science bootcamps
+=====
+font-family: 'Helvetica'
+width: 1024
+height: 768
+
+<p style="text-align: center;">
+Hilmar Lapp, Duke University<br/>
+Participants of the Reproducible Science Curriculum Hackathon
+</p>
+<p style="font-size: smaller; text-align: center">BOSC 2015, Dublin, Ireland
+<br/>
+<!-- public domain dedication copied from CC -->
+  <a rel="license"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+  </a>
+</p>
+
+Reproducibility crisis
+=====
+
+* Only 6 of 56 landmark oncology papers confirmed
+* 43 of 67 drug target validation studies failed to reproduce
+* Effect size overestimation is common
+
+***
+[![Nature Special Issue on Challenges in Irreproducible Research](media/Nature-special-issue.png)](http://www.nature.com/nature/focus/reproducibility/index.html)
+
+Reproducibility matters
+=====
+incremental: true
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+* _For public policy_
+
+Science retracts gay marriage paper
+=====
+
+* Science retracted (without lead author's consent) a study of how
+  canvassers can sway people's opinions about gay marriage
+
+* Original survey data was not made available for independent
+  reproduction of results (and survey incentives misrepresented, and
+  sponsorship statement false)
+
+* Two Berkeley grad students attempted to replicate the study and
+  discovered that the data must have been faked.
+
+Source: 
+http://news.sciencemag.org/policy/2015/05/science-retracts-gay-marriage-paper-without-lead-author-s-consent
+
+Reproducibility matters
+=====
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+* For public policy
+* _For patients_
+
+Seizure study retracted after authors realize data got "terribly mixed"
+=====
+
+From the authors of **Low Dose Lidocaine for Refractory Seizures in
+Preterm Neonates** ([doi:10.1007/s12098-010-0331-7](http://dx.doi.org/10.1007/s12098-010-0331-7):
+
+> The article has been retracted at the request of the authors. After carefully re-examining the data presented in the article, they identified that data of two different hospitals got terribly mixed. The published results cannot be reproduced in accordance with scientific and clinical correctness.
+
+Source: [Retraction Watch](http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/)
+
+Reproducibility matters
+=====
+
+Lack of reproducibility in science causes significant issues
+
+* For science as an enterprise
+* For other researchers in the community
+* For policy making
+* For patients
+* _For oneself as a researcher_
+
+Reproducibility = Accelerating science
+=====
+right: 60%
+
+* If my research is difficult to reproduce it impedes my lab, and my
+  future self.
+
+> Any work you do to make your analysis more reproducible pays dividends for colleagues and your future self.
+
+<p style="text-align: right">Jeremy Leipzig</p>
+
+***
+[![FitzJohn et al (2014) Reproducible research is still a challenge](media/rOpenSci-post-on-reproduducibility.png)](https://ropensci.org/blog/2014/06/09/reproducibility/)
+<span style="font-size: smaller;">https://ropensci.org/blog/2014/06/09/reproducibility/</span>
+
+Reproducible computational research is challenging
+=====
+
+<p/>
+* Most software has many dependencies, any one of which can fail to install.
+* Gaps and errors in docs may be harmless for experts, but are often
+  fatal for "method novices".
+* Software evolution means that parameters that worked a year ago may
+  now throw an error.
+* Dependency hell: baseline software and packages differ from one to another.
+
+***
+
+[![NESCent Informatics experiment on reproducing reproducible computational research](media/Reproducibility-experiment-storify2.png)](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
+
+Bewildering technology soup
+=====
+
+<p/>
+* Distributed version control
+* Git, Mercurial, Subversion
+* Provenance
+* SHA256
+* Docker, Docker Hub
+* Continuous Integration
+
+***
+
+<p/>
+* Literate programming
+* RMarkdown, Knitr
+* DataCite DOIs
+* Dryad, Zenodo, Figshare
+* HIPAA, PHI
+
+<div class="twocolspan">These are all about technology, not scientific discovery.</div>
+
+Reproducible Science Curriculum Workshop & Hackathon
+=====
+class: centered-image
+
+<p class="highlight" style="font-size: 200%; margin-bottom: 60px;">To develop an open source curriculum for a two-day workshop on reproducibility for computational research</p>
+
+[![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
+
+Reproducible Science Curriculum Workshop & Hackathon
+=====
+
+<p/>
+![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1058.jpg)
+![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1059.jpg)
+
+***
+
+<p/>
+* Held December 11-14 at NESCent in Durham, NC
+* Two days brainstorming / unconference, followed by two days
+  curriculum development
+* 21 participants comprising statisticians, biologists,
+  bioinformaticians, open-science activists, programmers, graduate
+  students, postdocs, untenured and tenured faculty
+
+Reproducible Science Curriculum Workshop & Hackathon
+=====
+left: 60%
+
+<p/>
+![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1056.jpg)
+
+<p class="highlight">Mission: To train researchers in the best practices and approaches of reproducible research</p>
+
+***
+
+<p/>
+Goals:
+* Modular - allow multiple formats, languages, to be incorporated
+* No restrictions or barriers to reuse
+* No reliance on tools that don't already exist
+
+Key concepts underlying the curriculum
+=====
+type: titleonly
+
+1. Benefits first accrue to researcher
+=====
+
+[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
+<small>Bruno Oliviera</small>
+
+***
+
+* Making your research reproducible for your future self.
+* Faster reporting of results despite updating data, tools, parameters, etc.
+* Faster resumption of research by others.
+
+<p class="highlight" style="margin-top: 70px;">More generally, accelerating scientific progress through reproducible science.</p>
+
+2. Good - Better - Best
+=====
+
+<br/>
+<br/>
+[![Peng, R. D. (2011) Reproducible Research in Computational Science](media/Good-better-best.jpg)](http://dx.doi.org/10.1126/science.1213847)
+Peng, R. D. “[Reproducible Research in Computational Science](http://dx.doi.org/10.1126/science.1213847)” Science 334, no. 6060 (2011): 1226–1227
+
+3. Literate Programming
+=====
+
+Provenance with results pasted into manuscript:
+![Figure copy&pasted into MS Word](media/Graph-pasted-in-Word.png)
+
+* Which code?
+* Which data?
+* Which context?
+
+***
+
+vs. Provenance of figures with Rmarkdown reports:
+[![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
+
+4. One dataset throughout
+=====
+
+<iframe width="100%" height="700px" src="http://www.gapminder.org"></iframe>
+
+5. Two pronged-approach
+=====
+
+<br/>
+* For scientists just starting with data workflows, raise them so that
+  they do not have workflows other than reproducible ones.
+* For scientists who already have their workflows, convince and train
+  them to adopt more reproducible ones.
+
+Curriculum is suitable for both.
+
+Inaugural workshop: May 14-15, Duke
+=====
+class: centered-image
+
+![](media/IMG_1245.jpg)
+
+Syllabus v1.0
+=====
+
+Day 1, morning:
+* Introduction to Reproducible Research
+* Rotation-based exercise
+* Introduction of R, RStudio, Rmarkdown, and Knitr
+
+Day 1, afternoon:
+* Organizing Files to Facilitate Reproducible Research
+* Literate Programming
+* Literate programming to clean and unit-test data
+
+***
+
+Day 2, morning:
+* Why automate?
+* Transforming R scripts into R functions
+* Automated testing and integration testing
+
+Day 2, afternoon:
+* Sharing and publishing for data and code
+* Archiving for perpetuity
+* Licensing
+
+On popular demand: Github
+
+Second workshop: June 1-2, iDigBio
+=====
+
+<iframe width="100%" height="700px" src="http://reproducible-science-curriculum.github.io/2015-06-01-reproducible-science-idigbio/"></iframe>
+
+Syllabus v1.1
+=====
+
+<br/>
+* Earlier introduction of literate programming
+* More exercise time on using literate programming reports for
+  executable documentation
+* Started Day 2 with 90 minutes on version control and collaboration
+  using Git and Github
+
+Observations, feedback and lessons learned
+=====
+type: titleonly
+
+Unexpectly strong demand and interest
+=====
+
+<br/>
+<br/>
+* For first workshop held at Duke, 30 seats filled up in less than 24 hours.
+* Ended up with >20 on waiting list, and several inquiries about when
+  the workshop will be repeated.
+* Second workshop (held at U. Florida) filled up. too.
+
+Tools and practices coming into the workshop cover a wide spectrum
+=====
+<p/>
+How are you recording your own research?
+* <span class="level6">Local digital documents</span>
+* <span class="level6">R scripts</span>
+* <span class="level5">Github</span>
+* <span class="level5">Rmarkdown, markdown text</span>
+* <span class="level5">Matlab</span>
+* <span class="level5">Lab notebooks</span>
+* <span class="level5">MS Word, Dropbox</span>
+
+***
+<p/>
+* <span class="level4">MS Powerpoint</span>
+* <span class="level4">Google drive</span>
+* <span class="level4">Script logging</span>
+* <span class="level4">Folder organization</span>
+* <span class="level3">Evernote</span>
+* <span class="level3">iPython</span>
+* <span class="level3">Perl scripts</span>
+* <span class="level3">Saving R sessions</span>
+* <span class="level3">Code comments</span>
+* <span class="level2">Wiki</span>
+* <span class="level2">Scratch paper</span>
+
+Don't be afraid of version control
+=====
+
+<br/>
+* Some students had heard about version control. Almost none had practiced it.
+* Nonetheless, it was the most consistently and most frequently
+  mentioned topic in feedback cards for wanting to hear about.
+* If you don't teach it, it will be asked for. But it is challenging
+  to teach effectively to novices in 90 minutes or less.
+
+Need lessons using iPython
+=====
+
+<br/>
+We chose R because it is 
+* popularly used for data analysis;
+* used widely across disciplines;
+* free and open-source;
+* supported on Windows, Mac OS X, and Linux;
+* and well-suited to teach the key concepts.
+
+However, those not familiar with R struggle with R's syntax and get frustrated.
+
+Future plans
+=====
+
+* Material development sprint & workshop:
+    * Tweaking design of exercises to be shorter, and have more
+      emphasis on skill development than realizing what the problems
+      are.
+    * Refining Git/Github lesson for the short time alloted to it.
+* Teaching more workshops
+* Expanding instructor pool
+* Sustaining and growing the effort
+    * Current funding ends in 2015.
+    * "Adoption" under the Data Carpentry umbrella possible.
+
+Acknowledgements
+=====
+
+* Organizing committee members and curriculum instructors
+    * Mine Çetinkaya-Rundel (I)
+    * Karen Cranston (O,I)
+    * Ciera Martinez (O,I)
+    * François Michonneau (O,I)
+    * Matt Pennell (O)
+    * Tracy Teal (O)
+
+***
+
+* Inspiration: Sophie (Kershaw) Kay - [Rotation Based Learning](http://www.opensciencetraining.com/content.php)
+* Funding and support:
+    * US National Science Foundation (NSF)
+    * National Evolutionary Synthesis Center (NESCent)
+    * Center for Genomic & Computational Biology (GCB), Duke University
+
+Eating our dogfood: text formats, version control, sharing
+=====
+<p/>
+This slideshow was generated as HTML from Markdown using RStudio. 
+
+The Markdown sources, and the HTML, are hosted on Github:
+https://github.com/Reproducible-Science-Curriculum/bosc2015
+
+<br/>
+The repository is archived on Zenodo: http://dx.doi.org/10.5281/zenodo.17844
+
+***
+
+<p/>
+![Rstudio screenshot of this presentation](media/Rstudio-of-prez.png)
+[![RStudio Logo](https://www.rstudio.com/wp-content/uploads/2014/03/blue-250.png)](https://www.rstudio.com)
