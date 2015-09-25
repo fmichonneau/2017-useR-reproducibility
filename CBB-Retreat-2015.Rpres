@@ -86,20 +86,21 @@ Lack of reproducibility in science causes significant issues
 * For patients
 * _For oneself as a researcher_
 
-Reproducibility = Accelerating science
+Reproducibility = Accelerating science, including your own
 =====
-right: 60%
 
-* If my research is difficult to reproduce it impedes my lab, _and_ my
-  future self.
-
-> Any work you do to make your analysis more reproducible pays dividends for colleagues and your future self.
-
-<p style="text-align: right">Jeremy Leipzig</p>
+<p/>
+[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
+<small>Bruno Oliviera</small>
 
 ***
-[![FitzJohn et al (2014) Reproducible research is still a challenge](media/rOpenSci-post-on-reproduducibility.png)](https://ropensci.org/blog/2014/06/09/reproducibility/)
-<span style="font-size: smaller;">https://ropensci.org/blog/2014/06/09/reproducibility/</span>
+
+<p/>
+* Research that is difficult to reproduce impedes your future self, and your lab.
+* More reproducible research is faster to report, in particular when research is dynamic. (Think data, tools, parameters, etc.)
+* More reproducible research is also faster to resume or to build on by others.
+
+<p class="highlight" style="margin-top: 10px;">Reproducible science accelerates scientific progress.</p>
 
 Computational research: codified methods yet challenging to reproduce
 =====
@@ -126,79 +127,49 @@ The training gap in scientific computing
 
 Reproducible Science Curriculum Workshop & Hackathon
 =====
-class: centered-image
-
-<p class="highlight" style="font-size: 200%; margin-bottom: 60px;">To develop an open source curriculum for a two-day workshop on reproducibility for computational research</p>
-
-[![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
-
-Reproducible Science Curriculum Workshop & Hackathon
-=====
 
 <p/>
 ![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1058.jpg)
-![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1059.jpg)
+[![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
 
 ***
 
 <p/>
 * Held December 11-14 at NESCent in Durham, NC
-* Two days brainstorming / unconference, followed by two days
-  curriculum development
 * 21 participants comprising statisticians, biologists,
   bioinformaticians, open-science activists, programmers, graduate
   students, postdocs, untenured and tenured faculty
+* Outcome: open source, reusable curriculum for a two-day workshop on reproducibility for computational research
 
-<p class="highlight">Mission: To train researchers in the best practices and approaches of reproducible research</p>
-
-The data
+Held 3 workshops so far
 =====
 
-<iframe width="100%" height="700px" src="http://www.gapminder.org"></iframe>
-
-Tools and practices coming into the workshop cover a wide spectrum
-=====
-<p/>
-How are you recording your own research?
-* <span class="level6">Local digital documents</span>
-* <span class="level6">R scripts</span>
-* <span class="level5">Github</span>
-* <span class="level5">Rmarkdown, markdown text</span>
-* <span class="level5">Matlab</span>
-* <span class="level5">Lab notebooks</span>
-* <span class="level5">MS Word, Dropbox</span>
-
-***
-<p/>
-* <span class="level4">MS Powerpoint</span>
-* <span class="level4">Google drive</span>
-* <span class="level4">Script logging</span>
-* <span class="level4">Folder organization</span>
-* <span class="level3">Evernote</span>
-* <span class="level3">iPython</span>
-* <span class="level3">Perl scripts</span>
-* <span class="level3">Saving R sessions</span>
-* <span class="level3">Code comments</span>
-* <span class="level2">Wiki</span>
-* <span class="level2">Scratch paper</span>
-
-Key concepts underlying the curriculum
-=====
-type: titleonly
-
-1. Benefits first accrue to researcher
-=====
-
-[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
-<small>Bruno Oliviera</small>
+* Inaugural workshop May 14-15, 2015 at Duke in Durham, NC
+* June 1-2, 2015 at iDigBio in Gainesville, FL
+* September 24-25, 2015, at the Duke Marine Lab in Beaufort, NC
+* Have made incremental improvements to curriculum and material in between workshops 
 
 ***
 
-* Making your research reproducible for your future self.
-* Faster reporting of results despite updating data, tools, parameters, etc.
-* Faster resumption of research by others.
+![](media/IMG_1245.jpg)
 
-<p class="highlight" style="margin-top: 70px;">More generally, accelerating scientific progress through reproducible science.</p>
+Current Syllabus
+=====
+
+**Day 1**
+* Motivation of and introduction to Reproducible Research
+* Best practices for file naming and file organization
+* Best practices for tabular data
+* Literate programming and executable documentation of data modification
+
+***
+
+**Day 2**
+* Version control and Git
+* Why automate?
+* Transforming repetitive R script code into R functions
+* Automated testing and integration testing
+* Sharing, publishing, and archiving for data and code
 
 Good - Better - Best
 =====
@@ -222,69 +193,6 @@ Provenance with results pasted into manuscript:
 
 vs. Provenance of figures with Rmarkdown reports:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
-
-Inaugural workshop: May 14-15, Duke
-=====
-class: centered-image
-
-![](media/IMG_1245.jpg)
-
-Current Syllabus
-=====
-
-Day 1, morning:
-* Introduction to Reproducible Research
-* Rotation-based exercise
-* Introduction of R, RStudio, Rmarkdown, and Knitr
-
-Day 1, afternoon:
-* Organizing Files to Facilitate Reproducible Research
-* Literate Programming
-* Literate programming to clean and unit-test data
-
-***
-
-Day 2, morning:
-* Why automate?
-* Transforming R scripts into R functions
-* Automated testing and integration testing
-
-Day 2, afternoon:
-* Sharing and publishing for data and code
-* Archiving for perpetuity
-* Licensing
-
-On popular demand: Github
-
-Observations, feedback and lessons learned
-=====
-type: titleonly
-
-Tools and practices coming into the workshop cover a wide spectrum
-=====
-<p/>
-How are you recording your own research?
-* <span class="level6">Local digital documents</span>
-* <span class="level6">R scripts</span>
-* <span class="level5">Github</span>
-* <span class="level5">Rmarkdown, markdown text</span>
-* <span class="level5">Matlab</span>
-* <span class="level5">Lab notebooks</span>
-* <span class="level5">MS Word, Dropbox</span>
-
-***
-<p/>
-* <span class="level4">MS Powerpoint</span>
-* <span class="level4">Google drive</span>
-* <span class="level4">Script logging</span>
-* <span class="level4">Folder organization</span>
-* <span class="level3">Evernote</span>
-* <span class="level3">iPython</span>
-* <span class="level3">Perl scripts</span>
-* <span class="level3">Saving R sessions</span>
-* <span class="level3">Code comments</span>
-* <span class="level2">Wiki</span>
-* <span class="level2">Scratch paper</span>
 
 Acknowledgements
 =====
