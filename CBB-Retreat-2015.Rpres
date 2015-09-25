@@ -1,11 +1,14 @@
-Tools and Resources for Reproducible Computational Science
+Reproducible Computational Science - Some good, better, and best practices
 =====
 font-family: 'Helvetica'
 width: 1024
 height: 768
 
 <p style="text-align: center;">
-Hilmar Lapp, Duke University<br/>
+A two day workshop in two hours (well, not quite)
+</p>
+<p style="text-align: center;">
+Hilmar Lapp, Duke University
 </p>
 <p style="font-size: smaller; text-align: center">CBB Retreat, September 2015
 <br/>
@@ -87,7 +90,7 @@ Reproducibility = Accelerating science
 =====
 right: 60%
 
-* If my research is difficult to reproduce it impedes my lab, and my
+* If my research is difficult to reproduce it impedes my lab, _and_ my
   future self.
 
 > Any work you do to make your analysis more reproducible pays dividends for colleagues and your future self.
@@ -98,20 +101,28 @@ right: 60%
 [![FitzJohn et al (2014) Reproducible research is still a challenge](media/rOpenSci-post-on-reproduducibility.png)](https://ropensci.org/blog/2014/06/09/reproducibility/)
 <span style="font-size: smaller;">https://ropensci.org/blog/2014/06/09/reproducibility/</span>
 
-Reproducible computational research is challenging
+Computational research: codified methods yet challenging to reproduce
 =====
 
-<p/>
-* Most software has many dependencies, any one of which can fail to install.
-* Gaps and errors in docs may be harmless for experts, but are often
-  fatal for "method novices".
-* Software evolution means that parameters that worked a year ago may
-  now throw an error.
-* Dependency hell: baseline software and packages differ from one to another.
+* _Dependency hell_: Most software has recursive and differing dependencies.  Any one can fail to install, conflict with those of others, and their exact versions can affect the results.
+* _Documentation gaps_: Code can easily be very difficult to understand if not documented. Documentation gaps and errors may be harmless for experts, but are often fatal for "method novices".
+* _Unpredictable evolution_: Scientific software evolves constantly and often in drastic rather than incremental ways. As a result, results, algorithms, and parameters can change in unpredictable ways, and can render code to fail after it worked only a short while months ago.
 
-***
+See [an experiment on reproducing reproducible computational research](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
 
-[![NESCent Informatics experiment on reproducing reproducible computational research](media/Reproducibility-experiment-storify2.png)](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
+The training gap in scientific computing
+=====
+
+* Even basic software engineering best practices are often not part of the training for scientists whose work relies on computation.
+    * Version control
+    * Extensive unit and integration testing
+    * Generating well-usable documentation
+    * Making laziness a virtue (_DRY_ - Don't Repeat Yourself)
+* Emerging technologies that foster or enable best practices
+    * Containerization - [Docker](http://www.docker.com)
+    * Literate programming - [RMarkdown](http://rmarkdown.rstudio.com), [Jupyter Notebooks](https://jupyter.org)
+    * Data and software archiving - [Dryad](http://datadryad.org), [Zenodo](http://zenodo.org), [Figshare](http://figshare.com)
+
 
 Reproducible Science Curriculum Workshop & Hackathon
 =====
@@ -139,6 +150,37 @@ Reproducible Science Curriculum Workshop & Hackathon
   students, postdocs, untenured and tenured faculty
 
 <p class="highlight">Mission: To train researchers in the best practices and approaches of reproducible research</p>
+
+The data
+=====
+
+<iframe width="100%" height="700px" src="http://www.gapminder.org"></iframe>
+
+Tools and practices coming into the workshop cover a wide spectrum
+=====
+<p/>
+How are you recording your own research?
+* <span class="level6">Local digital documents</span>
+* <span class="level6">R scripts</span>
+* <span class="level5">Github</span>
+* <span class="level5">Rmarkdown, markdown text</span>
+* <span class="level5">Matlab</span>
+* <span class="level5">Lab notebooks</span>
+* <span class="level5">MS Word, Dropbox</span>
+
+***
+<p/>
+* <span class="level4">MS Powerpoint</span>
+* <span class="level4">Google drive</span>
+* <span class="level4">Script logging</span>
+* <span class="level4">Folder organization</span>
+* <span class="level3">Evernote</span>
+* <span class="level3">iPython</span>
+* <span class="level3">Perl scripts</span>
+* <span class="level3">Saving R sessions</span>
+* <span class="level3">Code comments</span>
+* <span class="level2">Wiki</span>
+* <span class="level2">Scratch paper</span>
 
 Key concepts underlying the curriculum
 =====
@@ -180,11 +222,6 @@ Provenance with results pasted into manuscript:
 
 vs. Provenance of figures with Rmarkdown reports:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
-
-The data
-=====
-
-<iframe width="100%" height="700px" src="http://www.gapminder.org"></iframe>
 
 Inaugural workshop: May 14-15, Duke
 =====
