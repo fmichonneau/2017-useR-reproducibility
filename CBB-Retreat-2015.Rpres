@@ -178,14 +178,16 @@ Complete the following tasks and **write instructions / documentation** for your
 collaborator to reproduce your work starting with the original dataset 
 (`data/gapminder-5060.csv`).
 
-1. Visualize life expectancy over time for Canada in the 1950s and 1960s using 
+1. Download material: http://bit.ly/cbb-retreat -> [Releases](https://github.com/Reproducible-Science-Curriculum/cbb-retreat/releases/) -> Latest
+
+2. Visualize life expectancy over time for Canada in the 1950s and 1960s using 
 a line plot.
 
-2. Something is clearly wrong with this plot! Turns out there's a data error 
+3. Something is clearly wrong with this plot! Turns out there's a data error 
 in the data file: life expectancy for Canada in the year 1957 is coded
 as `999999`, it should actually be `69.96`. Make this correction.
 
-3. Visualize life expectancy over time for Canada again, with the corrected data.<br>
+4. Visualize life expectancy over time for Canada again, with the corrected data.<br>
 *Stretch goal:* Add lines for Mexico and United States.
 
 
