@@ -273,14 +273,17 @@ Executable data integrity checks
 =====
 
 <br/>
-```{r, echo=FALSE}
-gap_5060 <- read.csv("material/data/gapminder-5060.csv")
-```
+
 Life expectancy shouldn't exceed even the most extreme age observed for humans.
-```{r, error=TRUE}
+
+```r
 if (any(gap_5060$lifeExp > 150)) {
   stop("improbably high life expectancies")
 }
+```
+
+```
+Error in eval(expr, envir, enclos): improbably high life expectancies
 ```
 
 Executable data integrity checks
@@ -288,10 +291,16 @@ Executable data integrity checks
 
 <br/>
 The library `testthat` allows us to make this a little more readable:
-```{r, error=TRUE}
+
+```r
 library(testthat)
 expect_that(any(gap_5060$lifeExp > 150), is_false(), 
             "improbably high life expectancies")
+```
+
+```
+Error: any(gap_5060$lifeExp > 150) isn't false
+improbably high life expectancies
 ```
 
 Naming your files
@@ -347,7 +356,8 @@ $ ls *Plsmd*
 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_H03.csv
 ```
 
-```{r, eval=FALSE}
+
+```r
 > list.files(pattern = "Plsmd") %>% head
 [1] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv
 [2] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv
@@ -360,20 +370,24 @@ $ ls *Plsmd*
 Example:
 =====
 
-```{r, echo=FALSE, results="hide"}
-flist <- c("2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv",
-           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv",
-           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A03.csv",
-           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B01.csv",
-           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B02.csv",
-           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B03.csv")
-```
 
-```{r}
+
+
+```r
 meta <- stringr::str_split_fixed(flist, "[_\\.]", 5)
 colnames(meta) <-
            c("date", "assay", "experiment", "well", "ext")
 meta[,1:4]
+```
+
+```
+     date         assay       experiment            well 
+[1,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "A01"
+[2,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "A02"
+[3,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "A03"
+[4,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "B01"
+[5,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "B02"
+[6,] "2013-06-26" "BRAFASSAY" "Plsmd-CL56-1MutFrac" "B03"
 ```
 
 Organizing your files
@@ -441,7 +455,8 @@ type: titleonly
 Make everything
 =====
 
-```{r}
+
+```r
 make_ms <- function() {
     rmarkdown::render("manuscript.Rmd",
                       "html_document")
@@ -471,7 +486,8 @@ Tests made easier
 included in files in a given directory. We can use it to run all the tests in
 our `tests/` folder.
 
-```{r, eval=FALSE}
+
+```r
 test_dir("tests/")
 ```
 
@@ -479,7 +495,8 @@ Let's turn it into a function, so we'll be able to add some additional
 functionalities to it a little later. We are also going to save it at the root
 of our working directory in the file called `make.R`:
 
-```{r}
+
+```r
 ## add this to make.R
 make_tests <- function() {
     test_dir("tests/")
