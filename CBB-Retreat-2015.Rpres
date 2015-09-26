@@ -263,6 +263,10 @@ Provenance with results pasted into manuscript:
 vs. Provenance of figures with Rmarkdown reports:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
+Demo - Literate Programming
+=====
+type: titleonly
+
 Naming your files
 =====
 type: titleonly
