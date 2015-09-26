@@ -111,31 +111,15 @@ Computational research: codified methods yet challenging to reproduce
 
 See [an experiment on reproducing reproducible computational research](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
 
-The training gap in scientific computing
+Overcoming the training gap
 =====
 
-* Even basic software engineering best practices are often not part of the training for scientists whose work relies on computation.
-    * Version control
-    * Extensive unit and integration testing
-    * Generating well-usable documentation
-    * Making laziness a virtue (_DRY_ - Don't Repeat Yourself)
-* Emerging technologies that foster or enable best practices
-    * Containerization - [Docker](http://www.docker.com)
-    * Literate programming - [RMarkdown](http://rmarkdown.rstudio.com), [Jupyter Notebooks](https://jupyter.org)
-    * Data and software archiving - [Dryad](http://datadryad.org), [Zenodo](http://zenodo.org), [Figshare](http://figshare.com)
-
-
-Reproducible Science Curriculum Workshop & Hackathon
-=====
-
-<p/>
 ![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1058.jpg)
 [![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
 
 ***
 
-<p/>
-* Held December 11-14 at NESCent in Durham, NC
+* Curriculum development hackathon held December 11-14, 2014, at NESCent
 * 21 participants comprising statisticians, biologists,
   bioinformaticians, open-science activists, programmers, graduate
   students, postdocs, untenured and tenured faculty
@@ -171,13 +155,98 @@ Current Syllabus
 * Automated testing and integration testing
 * Sharing, publishing, and archiving for data and code
 
-Good - Better - Best
+Exercise: Motivating reproducibility
+=====
+type: titleonly
+
+Exercise: Motivating reproducibility
+=====
+type: prompt
+
+<br/><br/>
+This is a two-part exercise:
+
+**Part 1:** Analyze + document
+
+**Part 2:** Swap + discuss
+
+Part 1: Analyze + document
+=====
+type: prompt
+
+Complete the following tasks and **write instructions / documentation** for your 
+collaborator to reproduce your work starting with the original dataset 
+(`data/gapminder-5060.csv`).
+
+1. Visualize life expectancy over time for Canada in the 1950s and 1960s using 
+a line plot.
+
+2. Something is clearly wrong with this plot! Turns out there's a data error 
+in the data file: life expectancy for Canada in the year 1957 is coded
+as `999999`, it should actually be `69.96`. Make this correction.
+
+3. Visualize life expectancy over time for Canada again, with the corrected data.<br>
+*Stretch goal:* Add lines for Mexico and United States.
+
+
+Part 2: Swap + discuss
+=====
+type: prompt
+
+Introduce yourself to your collaborator.
+
+1. Swap instructions / documentation with your collaborator, and try to reproduce 
+their work, first **without talking to each oher**. 
+If your collaborator does not have the software they need to reproduce your work, we 
+encourage you to either help them install it or walk them through it on your computer 
+in a way that would emulate the experience. (Remember, this could be part of the 
+irreproducibility problem!)
+
+2. Then, talk to each other about challenges you faced (or didn't face) or why 
+you were or weren't able to reproduce their work.
+
+
+Reflection
+=====
+type: prompt
+
+This exercise:
+- What tools did you use (Excel, R / Python, Word / plain text etc.)?
+- What made it easy / hard for reproducing your partners' work?
+
+In a lab setting:
+- What would happen if your collaborator is no longer available to walk you through 
+their analysis?
+- What would have to happen if you
+    - had to swap out the dataset or extend the analysis?
+    - caught further errors and had to re-create the analysis?
+    - you had to revert back to the original dataset?
+    
+Four facets of reproducibility
+=====
+type: titleonly
+
+Four facets of reproducibility
 =====
 
-<br/>
-<br/>
-[![Peng, R. D. (2011) Reproducible Research in Computational Science](media/Good-better-best.jpg)](http://dx.doi.org/10.1126/science.1213847)
-Peng, R. D. “[Reproducible Research in Computational Science](http://dx.doi.org/10.1126/science.1213847)” Science 334, no. 6060 (2011): 1226–1227
+1. **Documentation:** difference between binary files (e.g. docx) and text files and
+why text files are preferred for documentation
+    - *Protip:* Use markdown to document your workflow so that anyone can pick up your
+    data and follow what you are doing
+    - *Protip:* Use literate programming so that your analysis and your results are
+    tightly connected, or better yet, unseperable
+
+2. **Organization:** tools to organize your projects so that you don't have a single 
+folder with hundreds of files
+
+3. **Automation:** the power of scripting to create automated data analyses
+
+4. **Dissemination:** publishing is not the end of your analysis, rather it is a way 
+station towards your future research and the future research of others
+
+Executable documentation
+=====
+type: titleonly
 
 Literate Programming
 =====
@@ -194,16 +263,349 @@ Provenance with results pasted into manuscript:
 vs. Provenance of figures with Rmarkdown reports:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
+Naming your files
+=====
+type: titleonly
+
+Research projects grow
+=====
+
+<br/><br/>
+- There are going to be files. _Lots of files._
+- They will change over time.
+- They will have differing relationships to each other.
+
+File organization and naming are effective weapons against chaos.
+
+Three key principles for (file) names
+=====
+
+* Machine readable
+    - easy to search for files later
+    - easy to narrow file lists based on names
+    - easy to extract info from file names (regexp-friendly)
+* Human readable
+    - name contains information on content, or
+    - name contains semantics (e.g., place in workflow)
+* Plays well with default ordering
+    - use numeric prefix to induce logic order
+    - left pad numbers with zeros
+    - use ISO 8601 standard (YYYY-mm-dd) for dates
+
+Exercise
+=====
+type: prompt
+
+<br/><br/>
+Your data files contain readings from a well plate, one file per well,
+using a specific assay run on a certain date, after a certain treatment.
+
+* Devise a naming scheme for the files that is both "machine" and "human" readable.
+
+Example:
+=====
+
+```sh
+$ ls *Plsmd*
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A03.csv
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B01.csv
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B02.csv
+...
+2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_H03.csv
+```
+
+```{r, eval=FALSE}
+> list.files(pattern = "Plsmd") %>% head
+[1] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv
+[2] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv
+[3] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A03.csv
+[4] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B01.csv
+[5] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B02.csv
+[6] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B03.csv
+```
+
+Example:
+=====
+
+```{r, echo=FALSE, results="hide"}
+flist <- c("2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv",
+           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv",
+           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A03.csv",
+           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B01.csv",
+           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B02.csv",
+           "2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B03.csv")
+```
+
+```{r}
+meta <- stringr::str_split_fixed(flist, "[_\\.]", 5)
+colnames(meta) <- c("date","assay",
+                    "experiment","well","ext")
+meta[,1:4]
+```
+
+Organizing your files
+=====
+type: titleonly
+
+Best practices for file organization
+=====
+class: centered-image
+
+[![Noble (2009) “A Quick Guide to Organizing Computational Biology Projects.” PLoS Computational Biology 5 (7): e1000424](http://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=info:doi/10.1371/journal.pcbi.1000424.g001)](http://dx.doi.org/10.1371/journal.pcbi.1000424)
+
+<small>Noble, William Stafford. 2009. “[A Quick Guide to Organizing Computational Biology Projects](http://dx.doi.org/10.1371/journal.pcbi.1000424).” PLoS Computational Biology 5 (7): e1000424.</small>
+
+A data science project using R
+=====
+title: false
+
+```
+|
++-- data-raw/
+|   |
+|   +-- gapminder-5060.csv
+|   +-- gapminder-7080.csv.csv
+|   +-- ....
+|
++-- data-output/
+|
++-- fig/
+|
++-- R/
+|   |
+|   +-- figures.R
+|	  +-- data.R
+|	  +-- utils.R
+|	  +-- dependencies.R
+|
++-- tests/
+|
++-- manuscript.Rmd
++-- make.R
+```
+
+Some principles for file organization
+=====
+
+- `data-raw`: the original data, you shouldn't edit or otherwise alter any of
+the files in this folder.
+- `data-output`: intermediate datasets that will be generated by the
+analysis. 
+      - We write them to CSV files so we could share or archive them,
+      for example if they take a long time (or expensive resources) to generate.
+- `fig`: the folder where we can store the figures used in the manuscript.
+- `R`: our R code (the functions)
+    - Often easier to keep the prose separated from the code. 
+    - If you have a lot of code (and/or manuscript is long), it's easier 
+    to navigate.
+- `tests`: the code to test that our functions are behaving properly and that
+all our data is included in the analysis.
+
+Automation
+=====
+type: titleonly
+
+Make everything
+=====
+
+```{r}
+make_ms <- function() {
+    rmarkdown::render("manuscript.Rmd",
+                      "html_document")
+    invisible(file.exists("manuscript.html"))
+}
+clean_ms <- function() {
+    res <- file.remove("manuscript.html")
+    invisible(res)
+}
+make_all <- function() {
+    make_data()
+    make_figures()
+    make_tests()
+    make_ms()
+}
+clean_all <- function() {
+    clean_data()
+    clean_figures()
+    clean_ms()
+}
+```
+
+Tests made easier
+=====
+
+`testthat` includes a function called `test_dir` that will run tests
+included in files in a given directory. We can use it to run all the tests in
+our `tests/` folder.
+
+```{r, eval=FALSE}
+test_dir("tests/")
+```
+
+Let's turn it into a function, so we'll be able to add some additional
+functionalities to it a little later. We are also going to save it at the root
+of our working directory in the file called `make.R`:
+
+```{r}
+## add this to make.R
+make_tests <- function() {
+    test_dir("tests/")
+}
+```
+
+Dissemination - Sharing, publishing, archiving
+=====
+type: titleonly
+
+Why share / archive data & code?
+=====
+incremental: true
+
+* funding agency / journal requirement
+* community expects it
+* _increased visibility / citation_
+
+increased visibility / citation
+=====
+left: 70%
+
+[![Piwowar & Vision (2013) Data reuse and the open data citation advantage.](https://dfzljdn9uc3pi.cloudfront.net/2013/175/1/fig-1-full.png)](https://dx.doi.org/10.7717/peerj.175)
+
+***
+
+Piwowar & Vision (2013) "[Data reuse and the open data citation advantage.](https://dx.doi.org/10.7717/peerj.175)" PeerJ, e175
+
+<small>Figure 1: Citation density for papers with and without publicly available microarray data, by year of study publication.</small>
+
+Why share / archive data & code?
+=====
+
+* funding agency / journal requirement
+* community expects it
+* increased visibility / citation
+* _better research_
+
+Better research
+=====
+left: 70%
+
+[![Wicherts et al (2011) Willingness to Share Research Data Is Related to the Strength of the Evidence and the Quality of Reporting of Statistical Results.](http://journals.plos.org/plosone/article/figure/image?size=large&id=info:doi/10.1371/journal.pone.0026828.g001)](http://dx.doi.org/10.1371/journal.pone.0026828)
+
+***
+
+<small>Wicherts et al (2011) "[Willingness to Share Research Data Is Related to the Strength of the Evidence and the Quality of Reporting of Statistical Results.](http://dx.doi.org/10.1371/journal.pone.0026828)" PLoS ONE 6(11): e26828</small>
+
+<p style="font-size: 75%">Figure 1. Distribution of reporting errors per paper for papers from which data were shared and from which no data were shared.</p>
+
+Where archive & publish?
+=====
+
+* Domain-specific data repository (GenBank, PDB)
+* Source code hosting service ([GitHub](http://github.com), [Bitbucket](http://bitbucket.com))
+* Generic repository ([Dryad](http://datadryad.com), [Figshare](http://figshare.com), [Zenodo](http://zenodo.org))
+* Institutional repository
+* Journal supplementary materials
+
+Where archive & publish?
+=====
+
+* Domain-specific data repository (GenBank, PDB)
+* Source code hosting service ([GitHub](http://github.com), [Bitbucket](http://bitbucket.com))
+* Generic repository ([Dryad](http://datadryad.com), [Figshare](http://figshare.com), [Zenodo](http://zenodo.org))
+* Institutional repository
+* ~~Journal supplementary materials~~
+
+How to choose a repository
+=====
+
+* Is there a domain specific repository?
+* What are the backup & replication policies?
+* Is there a plan for long-term preservation?
+* Can people find your materials?
+* Is it citable? (does it provide DOIs)
+
+University libraries try to help
+=====
+title: false
+
+<!-- Replace with your university library's data management guide -->
+<iframe width="100%" height="700px" src="http://library.duke.edu/data/guides/data-management"></iframe>
+
+How to share, publish: file formats
+=====
+
+**Do's**
+* non-proprietary file formats
+* text file formats (.csv, .tsv, .txt)
+
+***
+
+**Don't's**
+* proprietary file formats (.xls)
+* data as PDFs or images
+* data in Word documents
+
+Put a license on creative works
+=====
+type: titleonly
+
+Software licensing guide
+=====
+left: 70%
+
+[![Morin et al 2012, A Quick Guide to Software Licensing for the Scientist-Programmer](http://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=info:doi/10.1371/journal.pcbi.1002598.g002)](10.1371/journal.pcbi.1002598.g002)
+
+***
+
+> Morin, Andrew, Jennifer Urban, and Piotr Sliz. 2012. “[A Quick Guide to Software Licensing for the Scientist-Programmer.](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology 8 (7): e1002598.
+
+Don't put a license on facts (a.k.a. data)
+=====
+type: titleonly
+
+Licenses versus community norms
+=====
+
+<center>[![CC Zero](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png)](http://creativecommons.org/about/cc0)</center>
+
+From the [Panton Principles](http://pantonprinciples.org/faq/#Q11_What_are_community_norms_and_why_are_they_important):
+> [In] the scholarly research community the act of citation is a commonly held community norm when reusing another community member’s work. [...] A well functioning community supports its members in their application of norms, whereas licences can only be enforced through court action and thus invite people to ignore them when they are confident that this is unlikely.
+
+Good - Better - Best
+=====
+
+<br/>
+<br/>
+[![Peng, R. D. (2011) Reproducible Research in Computational Science](media/Good-better-best.jpg)](http://dx.doi.org/10.1126/science.1213847)
+Peng, R. D. “[Reproducible Research in Computational Science](http://dx.doi.org/10.1126/science.1213847)” Science 334, no. 6060 (2011): 1226–1227
+
+Forming reproducible habits pays off
+=====
+incremental: true
+
+* Reproducible practices can be applied after the fact, but it's much harder.
+    - And now you're doing this for others, rather than for your own benefits.
+    - And seriously, you won't ever publish the stuff you're working on?
+* Adopting practices for reproducible science from the outset pays off in multiple ways.
+    - It's easy and little work while the project is still small and contains few files.
+    - Now all you're doing is reproducible. No painful considerations when it comes to sharing stuff.
+    - Your future self will reap the benefits.
+    - (Your lab does, too, but that's a side effect.)
+    - (Who should be leading this - you or your old-school advisor?)
+
 Acknowledgements
 =====
 
-* Organizing committee members and curriculum instructors
-    * Mine Çetinkaya-Rundel (I)
-    * Karen Cranston (O,I)
-    * Ciera Martinez (O,I)
-    * François Michonneau (O,I)
-    * Matt Pennell (O)
-    * Tracy Teal (O)
+* Organizing committee members and _curriculum instructors_
+    * _Mine Çetinkaya-Rundel_ (Duke)
+    * _Karen Cranston_ (Duke)
+    * _Ciera Martinez_ (UC Davis)
+    * _François Michonneau_ (iDigBio, U. Florida)
+    * Matt Pennell (U. Idaho)
+    * Tracy Teal (Data Carpentry)
+    * _Dan Leehr_ (Duke)
 
 ***
 
