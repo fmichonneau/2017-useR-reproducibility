@@ -59,6 +59,11 @@
     font-size: 90%;
 }
 
+.reveal section pre {
+    width: 105%;
+    max-width: 105%;
+}
+
 .reveal section .level6 {
     font-size: 160%;
 }

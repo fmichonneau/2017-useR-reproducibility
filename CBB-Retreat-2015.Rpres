@@ -269,6 +269,31 @@ Demo - Literate Programming
 =====
 type: titleonly
 
+Executable data integrity checks
+=====
+
+<br/>
+```{r, echo=FALSE}
+gap_5060 <- read.csv("material/data/gapminder-5060.csv")
+```
+Life expectancy shouldn't exceed even the most extreme age observed for humans.
+```{r, error=TRUE}
+if (any(gap_5060$lifeExp > 150)) {
+  stop("improbably high life expectancies")
+}
+```
+
+Executable data integrity checks
+=====
+
+<br/>
+The library `testthat` allows us to make this a little more readable:
+```{r, error=TRUE}
+library(testthat)
+expect_that(any(gap_5060$lifeExp > 150), is_false(), 
+            "improbably high life expectancies")
+```
+
 Naming your files
 =====
 type: titleonly
@@ -346,8 +371,8 @@ flist <- c("2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv",
 
 ```{r}
 meta <- stringr::str_split_fixed(flist, "[_\\.]", 5)
-colnames(meta) <- c("date","assay",
-                    "experiment","well","ext")
+colnames(meta) <-
+           c("date", "assay", "experiment", "well", "ext")
 meta[,1:4]
 ```
 
