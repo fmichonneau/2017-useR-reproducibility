@@ -15,8 +15,8 @@ document including this narrative, the R code, and figures should pop up.
 
 The `read.csv` function is used to read the data into R. Note that the argument provided 
 for this function is the complete path that leads to the dataset from your current 
-working directory (where this RMarkdown file is located). Also note that this is provided 
-as a character string, hence in quotation marks.
+working directory (where this RMarkdown file is located). Also note that this
+is provided as a character string, hence in quotation marks.
 
 ```{r}
 gap_5060 <- read.csv("data/gapminder-5060.csv")
@@ -56,6 +56,28 @@ gap_5060_CA <- gap_5060 %>%
 ```{r}
 ggplot(data = gap_5060_CA, aes(x = year, y = lifeExp)) +
   geom_line()
+```
+
+### Test data integrity expectations
+
+Life expectancy shouldn't exceed even the most extreme age observed for humans.
+```{r, error=TRUE}
+if (any(gap_5060$lifeExp > 150)) {
+  stop("impossible life expectancy")
+}
+```
+
+The library `testthat` allows us to make this a little more readable:
+```{r}
+library(testthat)
+```
+```{r, error=TRUE}
+expect_that(any(gap_5060$lifeExp > 150), is_false(), 
+            "one or more life expectancies are improbably high")
+```
+```{r, error=TRUE}
+expect_that(any(gap_5060$pop <= 0), is_false(),
+            "one or more population sizes are zero or negative")
 ```
 
 ### Task 2: Identify and fix the data error
