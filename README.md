@@ -1,7 +1,10 @@
-# cbb-retreat
+# useR!2017 tutorial: Data Carpentry -- Open and Reproducible Science with R
 
-Two hour mini-lesson based on Reproducible Science Curriculum material,
-presented at the CBB Retreat in Wrightsville Beach on Sep 26, 2015.
+Three hour mini-lesson based on Reproducible Science Curriculum material. This
+presentation is a modification of
+a [2-hour lesson](http://reproducible-science-curriculum.github.io/cbb-retreat/)
+put together by Hilmar Lapp presented at the CBB Retreat in Wrightsville Beach
+on Sep 26, 2015.
 
 ## Further resources
 
