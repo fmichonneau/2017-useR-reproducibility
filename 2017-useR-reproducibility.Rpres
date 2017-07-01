@@ -1,16 +1,19 @@
-Reproducible Computational Science - Some good, better, and best practices
+Open and Reproducible Science with R
 =====
 font-family: 'Helvetica'
 width: 1024
 height: 768
 
 <p style="text-align: center;">
-A two day workshop in two hours (well, not quite)
+A two day workshop in 3 hours
 </p>
 <p style="text-align: center;">
-Hilmar Lapp, Duke University
+Mine Çetinkaya-Rundel, Duke University <br/>
+Colin Rundel, Duke University <br/>
+François Michonneau, University of Florida <br/>
+Tracy Teal, Data Carpentry
 </p>
-<p style="font-size: smaller; text-align: center">CBB Retreat, September 2015
+<p style="font-size: smaller; text-align: center">useR!2017 -- Brussels
 <br/>
 <!-- public domain dedication copied from CC -->
   <a rel="license"
@@ -18,6 +21,11 @@ Hilmar Lapp, Duke University
     <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
   </a>
 </p>
+
+```{r setup, echo=FALSE}
+library("knitr")
+opts_chunk$set(include=TRUE, error=TRUE)
+```
 
 Reproducibility crisis
 =====
@@ -52,7 +60,7 @@ Science retracts gay marriage paper
 * Two Berkeley grad students attempted to replicate the study and
   discovered that the data must have been faked.
 
-Source: 
+Source:
 http://news.sciencemag.org/policy/2015/05/science-retracts-gay-marriage-paper-without-lead-author-s-consent
 
 Reproducibility matters
@@ -125,18 +133,6 @@ Overcoming the training gap
   students, postdocs, untenured and tenured faculty
 * Outcome: open source, reusable curriculum for a two-day workshop on reproducibility for computational research
 
-Held 3 workshops so far
-=====
-
-* Inaugural workshop May 14-15, 2015 at Duke in Durham, NC
-* June 1-2, 2015 at iDigBio in Gainesville, FL
-* September 24-25, 2015, at the Duke Marine Lab in Beaufort, NC
-* Have made incremental improvements to curriculum and material in between workshops 
-
-***
-
-![](media/IMG_1245.jpg)
-
 Current Syllabus
 =====
 
@@ -174,16 +170,16 @@ Part 1: Analyze + document
 =====
 type: prompt
 
-Complete the following tasks and **write instructions / documentation** for your 
-collaborator to reproduce your work starting with the original dataset 
+Complete the following tasks and **write instructions / documentation** for your
+collaborator to reproduce your work starting with the original dataset
 (`data/gapminder-5060.csv`).
 
 1. Download material: http://bit.ly/cbb-retreat -> [Releases](https://github.com/Reproducible-Science-Curriculum/cbb-retreat/releases/) -> Latest
 
-2. Visualize life expectancy over time for Canada in the 1950s and 1960s using 
+2. Visualize life expectancy over time for Canada in the 1950s and 1960s using
 a line plot.
 
-3. Something is clearly wrong with this plot! Turns out there's a data error 
+3. Something is clearly wrong with this plot! Turns out there's a data error
 in the data file: life expectancy for Canada in the year 1957 is coded
 as `999999`, it should actually be `69.96`. Make this correction.
 
@@ -197,14 +193,14 @@ type: prompt
 
 Introduce yourself to your collaborator.
 
-1. Swap instructions / documentation with your collaborator, and try to reproduce 
-their work, first **without talking to each oher**. 
-If your collaborator does not have the software they need to reproduce your work, we 
-encourage you to either help them install it or walk them through it on your computer 
-in a way that would emulate the experience. (Remember, this could be part of the 
+1. Swap instructions / documentation with your collaborator, and try to reproduce
+their work, first **without talking to each oher**.
+If your collaborator does not have the software they need to reproduce your work, we
+encourage you to either help them install it or walk them through it on your computer
+in a way that would emulate the experience. (Remember, this could be part of the
 irreproducibility problem!)
 
-2. Then, talk to each other about challenges you faced (or didn't face) or why 
+2. Then, talk to each other about challenges you faced (or didn't face) or why
 you were or weren't able to reproduce their work.
 
 
@@ -216,14 +212,13 @@ This exercise:
 - What tools did you use (Excel, R / Python, Word / plain text etc.)?
 - What made it easy / hard for reproducing your partners' work?
 
-In a lab setting:
-- What would happen if your collaborator is no longer available to walk you through 
-their analysis?
+In a "real life" setting:
+- What would happen if your colleague/collaborator is no longer available to walk you through their analysis?
 - What would have to happen if you
     - had to swap out the dataset or extend the analysis?
     - caught further errors and had to re-create the analysis?
     - you had to revert back to the original dataset?
-    
+
 Four facets of reproducibility
 =====
 type: titleonly
@@ -233,17 +228,17 @@ Four facets of reproducibility
 
 1. **Documentation:** difference between binary files (e.g. docx) and text files and
 why text files are preferred for documentation
-    - *Protip:* Use markdown to document your workflow so that anyone can pick up your
-    data and follow what you are doing
-    - *Protip:* Use literate programming so that your analysis and your results are
-    tightly connected, or better yet, unseperable
+    - markdown is a great format to document your workflow so that anyone can pick up
+    your data and follow what you are doing
+    - Use *literate programming* so that your analysis and your results are
+    tightly connected
 
-2. **Organization:** tools to organize your projects so that you don't have a single 
+2. **Organization:** tools to organize your projects so that you don't have a single
 folder with hundreds of files
 
 3. **Automation:** the power of scripting to create automated data analyses
 
-4. **Dissemination:** publishing is not the end of your analysis, rather it is a way 
+4. **Dissemination:** publishing is not the end of your analysis, rather it is a way
 station towards your future research and the future research of others
 
 Executable documentation
@@ -276,8 +271,10 @@ Executable data integrity checks
 ```{r, echo=FALSE}
 gap_5060 <- read.csv("material/data/gapminder-5060.csv")
 ```
+
 Life expectancy shouldn't exceed even the most extreme age observed for humans.
-```{r, error=TRUE}
+
+```{r, echo=TRUE, eval=TRUE, include=TRUE}
 if (any(gap_5060$lifeExp > 150)) {
   stop("improbably high life expectancies")
 }
@@ -287,10 +284,11 @@ Executable data integrity checks
 =====
 
 <br/>
+
 The library `testthat` allows us to make this a little more readable:
-```{r, error=TRUE}
+```{r, echo=TRUE, eval=FALSE}
 library(testthat)
-expect_that(any(gap_5060$lifeExp > 150), is_false(), 
+expect_false(any(gap_5060$lifeExp > 150),
             "improbably high life expectancies")
 ```
 
@@ -371,8 +369,8 @@ flist <- c("2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv",
 
 ```{r}
 meta <- stringr::str_split_fixed(flist, "[_\\.]", 5)
-colnames(meta) <-
-           c("date", "assay", "experiment", "well", "ext")
+colnames(meta) <- c("date", "assay", "experiment",
+                    "well", "ext")
 meta[,1:4]
 ```
 
@@ -423,13 +421,13 @@ Some principles for file organization
 - `data-raw`: the original data, you shouldn't edit or otherwise alter any of
 the files in this folder.
 - `data-output`: intermediate datasets that will be generated by the
-analysis. 
+analysis.
       - We write them to CSV files so we could share or archive them,
       for example if they take a long time (or expensive resources) to generate.
 - `fig`: the folder where we can store the figures used in the manuscript.
 - `R`: our R code (the functions)
-    - Often easier to keep the prose separated from the code. 
-    - If you have a lot of code (and/or manuscript is long), it's easier 
+    - Often easier to keep the prose separated from the code.
+    - If you have a lot of code (and/or manuscript is long), it's easier
     to navigate.
 - `tests`: the code to test that our functions are behaving properly and that
 all our data is included in the analysis.
@@ -438,7 +436,7 @@ Automation
 =====
 type: titleonly
 
-Make everything
+Write functions to automate everything
 =====
 
 ```{r}
@@ -485,6 +483,75 @@ make_tests <- function() {
     test_dir("tests/")
 }
 ```
+
+Version Control
+=====
+type: titleonly
+
+Version Control -- bad
+=====
+
+Run on file names
+
+![](media/phdcomic-version-control.png)
+
+
+Version Control -- OK
+=====
+
+Use informatively named files
+
+```
+2013-10-14_manuscriptFish.doc
+2013-10-30_manuscriptFish.doc
+2013-11-05_manusctiptFish_intitialRyanEdits.doc
+2013-11-10_manuscriptFish.doc
+2013-11-11_manuscriptFish.doc
+2013-11-15_manuscriptFish.doc
+2013-11-30_manuscriptFish.doc
+2013-12-01_manuscriptFish.doc
+2013-12-02_manuscriptFish_PNASsubmitted.doc
+2014-01-03_manuscriptFish_PLOSsubmitted.doc
+2014-02-15_manuscriptFish_PLOSrevision.doc
+2014-03-14_manuscriptFish_PLOSpublished.doc
+```
+
+Version Control -- OK
+====
+
+Or zip the entire directory of your project files everytime you make a change, and save with date
+
+Version Control -- Best
+====
+
+Use a version control system (e.g. git)
+
+![](media/motivation-01.png)
+
+Why use git and GitHub?
+====
+
+Why use Git?
+
+* Safe to experiment with code
+* Easy to set up
+* Keep a full history of your project
+* Integrate well with RStudio
+
+***
+
+Features of a hosting service like GitHub
+
+* Your project is backed up
+* No setup: just tell git where your repo lives
+* GitHub has a large community: your colleagues are already there
+* Good interface and tools to collaborate with others
+* All your work lives at the same place
+
+Demonstration of RStudio's git integration
+====
+type: titleonly
+
 
 Dissemination - Sharing, publishing, archiving
 =====
@@ -548,14 +615,11 @@ Where archive & publish?
 * Institutional repository
 * ~~Journal supplementary materials~~
 
-How to choose a repository
+R packages to help you
 =====
 
-* Is there a domain specific repository?
-* What are the backup & replication policies?
-* Is there a plan for long-term preservation?
-* Can people find your materials?
-* Is it citable? (does it provide DOIs)
+* use [rfigshare](https://github.com/ropensci/rfigshare) to upload your datasets directly to [Figshare](https://figshare.com)
+* 
 
 University libraries try to help
 =====
@@ -623,36 +687,23 @@ incremental: true
     - It's easy and little work while the project is still small and contains few files.
     - Now all you're doing is reproducible. No painful considerations when it comes to sharing stuff.
     - Your future self will reap the benefits.
-    - (Your lab does, too, but that's a side effect.)
-    - (Who should be leading this - you or your old-school advisor?)
 
 Acknowledgements
 =====
 
-* Organizing committee members and _curriculum instructors_
-    * _Mine Çetinkaya-Rundel_ (Duke)
-    * _Karen Cranston_ (Duke)
-    * _Ciera Martinez_ (UC Davis)
-    * _François Michonneau_ (iDigBio, U. Florida)
-    * Matt Pennell (U. Idaho)
-    * Tracy Teal (Data Carpentry)
-    * _Dan Leehr_ (Duke)
-
-***
-
-* Inspiration: Sophie (Kershaw) Kay - [Rotation Based Learning](http://www.opensciencetraining.com/content.php)
 * Funding and support:
     * US National Science Foundation (NSF)
     * National Evolutionary Synthesis Center (NESCent)
     * Center for Genomic & Computational Biology (GCB), Duke University
+    * Moore Foundation
 
 Eating our dogfood: text formats, version control, sharing
 =====
 <p/>
-This slideshow was generated as HTML from Markdown using RStudio. 
+This slideshow was generated as HTML from Markdown using RStudio.
 
 The Markdown sources, and the HTML, are hosted on Github:
-https://github.com/Reproducible-Science-Curriculum/cbb-retreat
+https://github.com/fmichonneau/2017-useR-reproducibility
 
 ***
 

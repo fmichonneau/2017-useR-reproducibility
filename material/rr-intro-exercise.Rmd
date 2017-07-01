@@ -7,14 +7,14 @@ output:
 ---
 
 This RMarkdown file contains R code you can use to complete the exercises from the Intro
-session. To see the output simply click on *Knit HTML* above. This might prompt you to 
-install and load some required packages, specifically `knitr`. Just click yes, and the a 
+session. To see the output simply click on *Knit HTML* above. This might prompt you to
+install and load some required packages, specifically `knitr`. Just click yes, and the a
 document including this narrative, the R code, and figures should pop up.
 
 ## Data:
 
-The `read.csv` function is used to read the data into R. Note that the argument provided 
-for this function is the complete path that leads to the dataset from your current 
+The `read.csv` function is used to read the data into R. Note that the argument provided
+for this function is the complete path that leads to the dataset from your current
 working directory (where this RMarkdown file is located). Also note that this
 is provided as a character string, hence in quotation marks.
 
@@ -24,9 +24,9 @@ gap_5060 <- read.csv("data/gapminder-5060.csv")
 
 ## Packages:
 
-We will use the `ggplot2` and `dplyr` packages to make the plots for these exercises. 
+We will use the `ggplot2` and `dplyr` packages to make the plots for these exercises.
 
-- `ggplot2` for plotting: This is not the only way to make this plot, but this package 
+- `ggplot2` for plotting: This is not the only way to make this plot, but this package
 has some aesthetic defaults that makes it attractive. Find out more about the package
 at http://ggplot2.org/.
 - `dplyr` for data wrangling: This is not the only way manipulate data in R, but this
@@ -72,7 +72,7 @@ The library `testthat` allows us to make this a little more readable:
 library(testthat)
 ```
 ```{r, error=TRUE}
-expect_that(any(gap_5060$lifeExp > 150), is_false(), 
+expect_that(any(gap_5060$lifeExp > 150), is_false(),
             "one or more life expectancies are improbably high")
 ```
 ```{r, error=TRUE}
@@ -89,13 +89,12 @@ Something is clearly wrong with this plot! Turns out there's a data error in the
 location as determined by the logical statement `(country == "Canada" & year == 1957)`
 ```{r}
 gap_5060 <- gap_5060 %>%
-  mutate(lifeExp = replace(lifeExp, (country == "Canada" & year == 1957), 69.96)) %>%
-  as.data.frame()
+  mutate(lifeExp = replace(lifeExp, (country == "Canada" & year == 1957), 69.96))
 ```
 
 ### Task 3: Visualize life expectancy over time for Canada again, with the corrected data.
 
-Exact same code as before, but note that the contents of `gap_5060` are different as it 
+Exact same code as before, but note that the contents of `gap_5060` are different as it
 has been updated in the previous task.
 ```{r}
 gap_5060_CA <- gap_5060 %>%
