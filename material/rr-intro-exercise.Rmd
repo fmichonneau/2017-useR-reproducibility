@@ -37,7 +37,8 @@ At this point you should have installed these packages using `install.packages()
 
 Now we need to explicitly load the packages:
 
-```{r message=FALSE}
+```{r setup, message=FALSE, cache=FALSE}
+knitr::opts_chunk$set(include = TRUE, error = TRUE)
 library("ggplot2")
 library("dplyr")
 ```
@@ -61,22 +62,26 @@ ggplot(data = gap_5060_CA, aes(x = year, y = lifeExp)) +
 ### Test data integrity expectations
 
 Life expectancy shouldn't exceed even the most extreme age observed for humans.
-```{r, error=TRUE}
+
+```{r}
 if (any(gap_5060$lifeExp > 150)) {
   stop("impossible life expectancy")
 }
 ```
 
 The library `testthat` allows us to make this a little more readable:
+
 ```{r}
 library(testthat)
 ```
-```{r, error=TRUE}
-expect_that(any(gap_5060$lifeExp > 150), is_false(),
+
+```{r, include=TRUE, eval=FALSE}
+expect_false(any(gap_5060$lifeExp > 150),
             "one or more life expectancies are improbably high")
 ```
-```{r, error=TRUE}
-expect_that(any(gap_5060$pop <= 0), is_false(),
+
+```{r, include=TRUE, eval=FALSE}
+expect_false(any(gap_5060$pop <= 0),
             "one or more population sizes are zero or negative")
 ```
 
@@ -87,6 +92,7 @@ Something is clearly wrong with this plot! Turns out there's a data error in the
 - `mutate` for creating a new variable
 - `replace` for replacing a data entry in a specific
 location as determined by the logical statement `(country == "Canada" & year == 1957)`
+
 ```{r}
 gap_5060 <- gap_5060 %>%
   mutate(lifeExp = replace(lifeExp, (country == "Canada" & year == 1957), 69.96))
@@ -96,6 +102,7 @@ gap_5060 <- gap_5060 %>%
 
 Exact same code as before, but note that the contents of `gap_5060` are different as it
 has been updated in the previous task.
+
 ```{r}
 gap_5060_CA <- gap_5060 %>%
   filter(country == "Canada")
@@ -108,6 +115,7 @@ ggplot(data = gap_5060_CA, aes(x = year, y = lifeExp)) +
 
 - `%in%` for logical operator testing if a country's name is in the list provided
 - Same visualization code as before, only difference is the input dataset
+
 ```{r}
 gap_5060_NA <- gap_5060 %>%
   filter(country %in% c("Canada", "Mexico", "United States"))
@@ -119,19 +127,22 @@ ggplot(data = gap_5060_NA, aes(x = year, y = lifeExp, color = country)) +
 ### Extending your analysis with new data:
 
 Load the new data:
+
 ```{r}
 gap_7080 <- read.csv("data/gapminder-7080.csv")
 gap_90plus <- read.csv("data/gapminder-90plus.csv")
 ```
 
-Cobine data frames with `rbind` (**r**ow bind):
+Combine data frames with `bind_rows()` from **`dplyr`**:
+
 ```{r}
-gap <- rbind(gap_5060, gap_7080, gap_90plus)
+gap <- bind_rows(list(gap_5060, gap_7080, gap_90plus))
 ```
 
 Make the same plots, with the same code, just changing the input data frame:
 
 1. Canada only:
+
 ```{r}
 gap_ca <- gap %>%
   filter(country == "Canada")
@@ -141,6 +152,7 @@ ggplot(data = gap_ca, aes(x = year, y = lifeExp)) +
 ```
 
 2. North America:
+
 ```{r}
 gap_NA <- gap %>%
   filter(country %in% c("Canada", "Mexico", "United States"))
