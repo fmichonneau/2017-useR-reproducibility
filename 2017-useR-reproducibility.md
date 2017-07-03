@@ -168,12 +168,6 @@ Current Syllabus
 * Automated testing and integration testing
 * Sharing, publishing, and archiving for data and code
 
-
-Exercise: Motivating reproducibility
-=====
-type: titleonly
-
-
 Exercise: Motivating reproducibility
 =====
 type: prompt
@@ -315,18 +309,14 @@ Note: If you run this in your console, you should get an error that
 reads: `Error: any(gap_5060$lifeExp > 150) isn't false. One or more 
 life expectancies are improbably high. Execution halted`.
 
-
-Demo - Our solution to "Motivating Reproducibility" exercise
+Demo
 ====
 type: titleonly
 
+Our solution to "Motivating Reproducibility" exercise.
 See `material/01-mot-rep-soln.Rmd`.
 
-Exercise - Extending your analysis
-====
-type: titleonly
-
-Exercise - Extending your analysis
+Exercise: Extending your analysis
 =====
 type: prompt
 
@@ -336,21 +326,32 @@ You got more data! New data come in two separate files: `gap_7080.csv` and
 Create the same plots that you created before (one for Canada and, as the 
 stretch goal, one for North America) of life expectancy vs. GDP per capita.
 
-Demo - Our solution to "Extending your analysis" exercise
+Demo
 ====
 type: titleonly
 
+Our solution to "Extending your analysis" exercise.
 See `material/02-extend-soln.Rmd`.
 
-Demo - Literate Programming with RMarkdown
+Demo
 =====
 type: titleonly
 
+More literate programming with RMarkdown.
+See `material/03-more-lit-prog.Rmd`.
+
+Exercise (time permitting): More literate programming
+=====
+type: prompt
+
+- Change your name on `03-more-lit-prog.Rmd` and re-knit
+- Change the countries (either variables params$country_1 or country_3)
+- Moderately challenging: Add trend lines in the plots
+- More challenging: Write tests on the data (potentially first inline the Rmd file, and later as testthat tests in a separate folder)
 
 Organization
 =====
 type: titleonly
-
 
 Research projects grow
 =====
@@ -621,11 +622,11 @@ Features of a hosting service like GitHub
 * Good interface and tools to collaborate with others
 * All your work lives at the same place
 
-
-Demonstration of RStudio's git integration
+Demo
 ====
 type: titleonly
 
+RStudio's Git intergration
 
 Dissemination - Sharing, publishing, archiving
 =====
