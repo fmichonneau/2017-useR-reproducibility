@@ -1,104 +1,108 @@
 ---
-title: 'Intro Session: Motivating reproducibility'
+title: 'Exercise: Motivating reproducibility'
 output:
   html_document:
     fig_height: 3
     fig_width: 6
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE, error = TRUE)
+```
+
+
 This RMarkdown file contains R code you can use to complete the exercises from the Intro
 session. To see the output simply click on *Knit HTML* above. This might prompt you to
 install and load some required packages, specifically `knitr`. Just click yes, and the a
 document including this narrative, the R code, and figures should pop up.
 
-## Data:
-
-The `read.csv` function is used to read the data into R. Note that the argument provided
-for this function is the complete path that leads to the dataset from your current
-working directory (where this RMarkdown file is located). Also note that this
-is provided as a character string, hence in quotation marks.
-
-```{r}
-gap_5060 <- read.csv("data/gapminder-5060.csv")
-```
-
 ## Packages:
 
-We will use the `ggplot2` and `dplyr` packages to make the plots for these exercises.
+We will use packages from **tidyverse**, a collection of R packages that share common philosophies and are designed to work together. Specifically, we'll use functions from the following three packages:
 
-- `ggplot2` for plotting: This is not the only way to make this plot, but this package
-has some aesthetic defaults that makes it attractive. Find out more about the package
-at http://ggplot2.org/.
-- `dplyr` for data wrangling: This is not the only way manipulate data in R, but this
+- **readr** for loading data: The goal of readr is to provide a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes. Find out more at http://readr.tidyverse.org/.
+- **ggplot2** for plotting: This is not the only way to make this plot, but this package
+has some aesthetic defaults that makes it attractive. Find out more at 
+at http://ggplot2.tidyverse.org/.
+- **dplyr** for data wrangling: This is not the only way manipulate data in R, but this
 package uses piping and a simple set of verbs for most common data wranling tasks which
-makes it attractive. See the package vignette at https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html.
+makes it attractive. Find out more at http://dplyr.tidyverse.org/.
 
-At this point you should have installed these packages using `install.packages()`.
+Additionally, we will use the **testthat** package for testing data integrity expectations.
+
+If you have not yet done so, install tidyverse via `install.packages(tidyverse)` and testthat via `install.packages(testthat)`.
 
 Now we need to explicitly load the packages:
 
-```{r setup, message=FALSE, cache=FALSE}
-knitr::opts_chunk$set(include = TRUE, error = TRUE)
-library("ggplot2")
-library("dplyr")
+```{r package, message=FALSE, cache=FALSE}
+library("tidyverse")
+library("testthat")
 ```
 
-## Data tasks
+## Part 1: Analyze + document
 
-### Task 1: Visualize life expectancy over time for Canada in the 1950s and 1960s using a line plot.
+#### 1. Load the data: 
 
-1. Filter the data for Canada only:
+Note that `read_csv` uses `stringsAsFactors = FALSE` by default.
+
 ```{r}
+gap_5060 <- read_csv("data/gapminder-5060.csv")
+```
+
+#### 2. Visualize life expectancy over time for Canada in the 1950s and 1960s using a line plot.
+  
+```{r}
+# Filter the data for Canada only
 gap_5060_CA <- gap_5060 %>%
   filter(country == "Canada")
-```
-
-2. Visaualize:
-```{r}
+# Visualize
 ggplot(data = gap_5060_CA, aes(x = year, y = lifeExp)) +
   geom_line()
 ```
 
-### Test data integrity expectations
+Something is clearly wrong with this plot!
 
-Life expectancy shouldn't exceed even the most extreme age observed for humans.
+#### 3. Test data integrity expectations, and make appropriate corrections.
+
+Life expectancy shouldn't exceed even the most extreme age observed for humans. The following is one way to test for this:
 
 ```{r}
 if (any(gap_5060$lifeExp > 150)) {
-  stop("impossible life expectancy")
+  stop("Impossible life expectancy.")
 }
 ```
 
-The library `testthat` allows us to make this a little more readable:
+Another approach is using the testthat package, which allows us to make the test a little more readable:
 
-```{r}
-library(testthat)
-```
-
-```{r, include=TRUE, eval=FALSE}
+```{r include=TRUE, eval=FALSE}
 expect_false(any(gap_5060$lifeExp > 150),
-            "one or more life expectancies are improbably high")
+            "One or more life expectancies are improbably high.")
 ```
 
-```{r, include=TRUE, eval=FALSE}
+Note: If you run this in your console, you should get an error that reads: `Error: any(gap_5060$lifeExp > 150) isn't false. One or more life expectancies are improbably high.
+Execution halted`.
+
+We can also check for 0 or negative population:
+
+```{r, eval=FALSE}
 expect_false(any(gap_5060$pop <= 0),
-            "one or more population sizes are zero or negative")
+            "One or more population sizes are zero or negative.")
 ```
 
-### Task 2: Identify and fix the data error
-
-Something is clearly wrong with this plot! Turns out there's a data error in the data file: life expectancy for Canada in the year 1957 is coded as `999999`, it should actually be `69.96`. Make this correction.
-
-- `mutate` for creating a new variable
-- `replace` for replacing a data entry in a specific
-location as determined by the logical statement `(country == "Canada" & year == 1957)`
+Turns out there's a data error in the data file: life expectancy for Canada in the year 1957 is coded as `999999`, it should actually be `69.96`. We now make this correction:
 
 ```{r}
 gap_5060 <- gap_5060 %>%
-  mutate(lifeExp = replace(lifeExp, (country == "Canada" & year == 1957), 69.96))
+  mutate(
+    lifeExp = case_when(
+      country == "Canada" & year == 1957 ~ 69.96
+    )
+  )
 ```
 
-### Task 3: Visualize life expectancy over time for Canada again, with the corrected data.
+Also, documentation is already done!
+
+#### 4. Visualize life expectancy over time for Canada again, with the corrected data.
 
 Exact same code as before, but note that the contents of `gap_5060` are different as it
 has been updated in the previous task.
@@ -111,7 +115,7 @@ ggplot(data = gap_5060_CA, aes(x = year, y = lifeExp)) +
   geom_line()
 ```
 
-### Task 3 - Stretch goal: Add lines for Mexico and United States.
+#### 4 - Stretch goal. Add lines for Mexico and United States.
 
 - `%in%` for logical operator testing if a country's name is in the list provided
 - Same visualization code as before, only difference is the input dataset
@@ -124,7 +128,7 @@ ggplot(data = gap_5060_NA, aes(x = year, y = lifeExp, color = country)) +
   geom_line()
 ```
 
-### Extending your analysis with new data:
+## Part 2: Extending your analysis with new data:
 
 Load the new data:
 
