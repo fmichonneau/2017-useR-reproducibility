@@ -171,42 +171,40 @@ This is a two-part exercise:
 
 **Part 2:** Swap + discuss
 
+
 Part 1: Analyze + document
 =====
 type: prompt
 
-Complete the following tasks and **write instructions / documentation** for your
+Complete the following task and **write instructions / documentation** for your
 collaborator to reproduce your work starting with the original dataset
 (`data/gapminder-5060.csv`).
 
-1. Download material: http://bit.ly/cbb-retreat -> [Releases](https://github.com/Reproducible-Science-Curriculum/cbb-retreat/releases/) -> Latest
+1. Download material: http://bit.ly/2sEPe4z -> [Full Link](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/cbb-retreat/master/material/data/gapminder-5060.csv) 
 
-2. Visualize life expectancy over time for Canada in the 1950s and 1960s using
+2. Visualize life expectancy over time for Canadians in the 1950s and 1960s using
 a line plot.
 
-3. Something is clearly wrong with this plot! Turns out there's a data error
-in the data file: life expectancy for Canada in the year 1957 is coded
-as `999999`, it should actually be `69.96`. Make this correction.
+3. Something should be clearly wrong with your plot, figure out (and document) what this is and come up with a fix.
 
-4. Visualize life expectancy over time for Canada again, with the corrected data.<br>
-*Stretch goal:* Add lines for Mexico and United States.
+4. With the revised data, visualize life expectancy over time for Canadians again.<br>
+*Stretch goal:* Add additional lines for the life expectancy of  Mexician and Americans as well.
 
 
 Part 2: Swap + discuss
 =====
 type: prompt
 
-Introduce yourself to your collaborator.
+Introduce yourself to your collaborator (neighbor).
 
-1. Swap instructions / documentation with your collaborator, and try to reproduce
-their work, first **without talking to each oher**.
-If your collaborator does not have the software they need to reproduce your work, we
-encourage you to either help them install it or walk them through it on your computer
-in a way that would emulate the experience. (Remember, this could be part of the
-irreproducibility problem!)
+1. Swap instructions / documentation with your collaborator. As you read it over think about how you would attempt to reproduce their work.
 
-2. Then, talk to each other about challenges you faced (or didn't face) or why
+2. If your collaborator/neighbor does not have or is unfamiliar with the software you used we
+encourage you to given them a brief explination of what it is and why you chose it. (Remember, this could be part of the irreproducibility problem!)
+
+3. Then, talk to each other about challenges you faced (or didn't face) or why
 you were or weren't able to reproduce their work.
+
 
 
 Reflection
