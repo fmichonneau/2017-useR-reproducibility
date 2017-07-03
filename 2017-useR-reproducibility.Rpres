@@ -261,7 +261,7 @@ type: titleonly
 Accessible documentation
 =====
 
-Documentation takes many forms (e.g. the README of a github repo, Rd files in an R package) depending on your project, be it a Journal Article, a blog post or an R - tou should strive to make it as frictionless as possible for new and existings users to access any documentation you create (plain text is always a safe assumption, Microsoft Word is not).
+Documentation takes many forms (e.g. the README of a github repo, Rd files in an R package) depending on your project, be it a Journal Article, a blog post or an R - you should strive to make it as frictionless as possible for new and existings users to access any documentation you create (plain text is always a safe assumption, Microsoft Word is not).
 
 Literate Programming
 =====
@@ -345,9 +345,15 @@ Exercise (time permitting): More literate programming
 type: prompt
 
 - Change your name on `03-more-lit-prog.Rmd` and re-knit
-- Change the countries (either variables params$country_1 or country_3)
+- Change the countries (either variables `params$country_1` or `country_3`)
 - Moderately challenging: Add trend lines in the plots
 - More challenging: Write tests on the data (potentially first inline the Rmd file, and later as testthat tests in a separate folder)
+
+
+Break
+=====
+type: titleonly
+
 
 Organization
 =====
@@ -469,9 +475,9 @@ title: false
 +-- R/
 |   |
 |   +-- figures.R
-|	  +-- data.R
-|	  +-- utils.R
-|	  +-- dependencies.R
+|   +-- data.R
+|   +-- utils.R
+|   +-- dependencies.R
 |
 +-- tests/
 |
@@ -488,7 +494,7 @@ the files in this folder.
       - We write them to CSV or other portable formats, particularly useful when it take a long time (or expensive resources) to generate.
 - `fig`: where we can store the figures used in the manuscript.
 - `R`: our R code (the functions)
-    - For large project it often becomes easier to keep the prose separated from the code.
+    - For large projects it often becomes easier to keep the prose separated from the code.
     - If you have a lot of code (and/or manuscript is long), it's easier to navigate.
     - Or just create an R package.
 - `tests`: the code to test that our functions are behaving properly and that all our data is included in the analysis.
@@ -554,8 +560,6 @@ type: titleonly
 Version Control -- bad
 =====
 
-Run on file names
-
 ![](media/phdcomic-version-control.png)
 
 
@@ -618,7 +622,9 @@ Demo
 ====
 type: titleonly
 
-RStudio's Git intergration
+RStudio's Git intergration. <br/>
+<font size="5">For more see http://happygitwithr.com/.</font>
+
 
 Dissemination - Sharing, publishing, archiving
 =====
