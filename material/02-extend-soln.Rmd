@@ -1,0 +1,58 @@
+---
+title: 'Exercise: Extending your analysis'
+output:
+  html_document:
+    fig_height: 3
+    fig_width: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE, error = TRUE)
+```
+
+```{r packages}
+library(tidyverse)
+```
+
+Load and fix the old data:
+
+```{r}
+gap_5060 <- read_csv("data/gapminder-5060.csv") %>%
+    mutate(lifeExp = replace(lifeExp, (country == "Canada" & year == 1957), 69.96))
+```
+
+
+Load the new data:
+
+```{r}
+gap_7080 <- read.csv("data/gapminder-7080.csv")
+gap_90plus <- read.csv("data/gapminder-90plus.csv")
+```
+
+Combine data frames with `bind_rows()` from **dplyr**:
+
+```{r}
+gap <- bind_rows(list(gap_5060, gap_7080, gap_90plus))
+```
+
+Make the same plots, with the same code, just changing the input data frame:
+
+1. Canada only:
+
+```{r}
+gap_ca <- gap %>%
+  filter(country == "Canada")
+
+ggplot(data = gap_ca, aes(x = year, y = lifeExp)) +
+  geom_line()
+```
+
+2. North America:
+
+```{r}
+gap_NA <- gap %>%
+  filter(country %in% c("Canada", "Mexico", "United States"))
+
+ggplot(data = gap_NA, aes(x = year, y = lifeExp, color = country)) +
+  geom_line()
+```
