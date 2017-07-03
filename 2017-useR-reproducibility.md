@@ -265,8 +265,6 @@ Accessible documentation
 
 Documentation takes many forms (e.g. the README of a github repo, Rd files in an R package) depending on your project, be it a Journal Article, a blog post or an R - tou should strive to make it as frictionless as possible for new and existings users to access any documentation you create (plain text is always a safe assumption, Microsoft Word is not).
 
-
-
 Literate Programming
 =====
 
@@ -278,29 +276,24 @@ Provenance of *copy and pasted* figure:
 vs. Provenance of R Markdown figure:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
-
-Demo - Literate Programming with RMarkdown
-=====
-type: titleonly
-
-
 Data sanity checks
 =====
 
-<br/>
+<br>
 
 
-Reported life expectancy shouldn't exceed the most extreme age observed for humans.
+Reported life expectancy shouldn't exceed even the most extreme age observed 
+for humans.
 
 
 ```r
 if (any(gap_5060$lifeExp > 150)) {
-  stop("improbably high life expectancies")
+  stop("Improbably high life expectancy.")
 }
 ```
 
 ```
-Error in eval(expr, envir, enclos): improbably high life expectancies
+Error in eval(expr, envir, enclos): Improbably high life expectancy.
 ```
 
 
@@ -309,13 +302,49 @@ More formal data integrity checks
 
 <br/>
 
-The library `testthat` allows us to make this a little more readable:
+Another approach is using the testthat package, which allows us to 
+make the test a little more readable:
+
 
 ```r
-library(testthat)
 expect_false(any(gap_5060$lifeExp > 150),
-            "improbably high life expectancies")
+            "One or more life expectancies are improbably high.")
 ```
+
+Note: If you run this in your console, you should get an error that 
+reads: `Error: any(gap_5060$lifeExp > 150) isn't false. One or more 
+life expectancies are improbably high. Execution halted`.
+
+
+Demo - Our solution to "Motivating Reproducibility" exercise
+====
+type: titleonly
+
+See `material/01-mot-rep-soln.Rmd`.
+
+Exercise - Extending your analysis
+====
+type: titleonly
+
+Exercise - Extending your analysis
+=====
+type: prompt
+
+You got more data! New data come in two separate files: `gap_7080.csv` and 
+`gap_90plus.csv`.
+
+Create the same plots that you created before (one for Canada and, as the 
+stretch goal, one for North America) of life expectancy vs. GDP per capita.
+
+Demo - Our solution to "Extending your analysis" exercise
+====
+type: titleonly
+
+See `material/02-extend-soln.Rmd`.
+
+Demo - Literate Programming with RMarkdown
+=====
+type: titleonly
 
 
 Organization
