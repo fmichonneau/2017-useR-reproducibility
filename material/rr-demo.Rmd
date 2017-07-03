@@ -7,24 +7,28 @@ params:
 ---
 
 
-```{r setup}
+```{r load-packages}
 library(tidyverse)
+```
 
-gap <- read.csv("data/gapminder.csv")
+```{r load-data}
+gap <- read_csv("data/gapminder.csv")
+```
 
+Define a function, `plot_country`, that takes country names as one of its arguments and outputs a plot of life expectancy by year for each country and displays the GDP per capita of the country as size of the points.
+
+```{r def-plot-country}
 plot_country <- function(gap, ctry) {
-    ctry <- match.arg(ctry, unique(gap$country),  several.ok = TRUE)
-    gap %>%
-        filter(country %in% ctry) %>%
-        ggplot(aes(x = year, y = lifeExp, colour = country, size = gdpPercap)) +
-        geom_point() +
-        labs(title = paste(ctry, collapse = ", "),
-                           subtitle = "Change in life expectancy and GDP per capita")
+  ctry <- match.arg(ctry, unique(gap$country),  several.ok = TRUE)
+  gap %>%
+    filter(country %in% ctry) %>%
+    ggplot(aes(x = year, y = lifeExp, colour = country, size = gdpPercap)) +
+    geom_point() +
+    labs(title = paste(ctry, collapse = ", "),
+         subtitle = "Change in life expectancy and GDP per capita")
 }
 
 country_3 <- "South Africa"
-
-
 ```
 
 We compare the change in life expectancy for `r params$country_1`, `r params$country_2` and `r country_3`:
@@ -36,10 +40,9 @@ plot_country(gap, c(params$country_1, params$country_2, country_3))
 
 ```{r table-country}
 gap %>%
-    filter(country %in% c(params$country_1, params$country_2,
-                          country_3)) %>%
-    select(country, lifeExp, pop,  gdpPercap) %>%
-    group_by(country) %>%
-    summarise_all(mean) %>%
-    kable()
+  filter(country %in% c(params$country_1, params$country_2, country_3)) %>%
+  select(country, lifeExp, pop,  gdpPercap) %>%
+  group_by(country) %>%
+  summarise_all(mean) %>%
+  knitr::kable()
 ```
