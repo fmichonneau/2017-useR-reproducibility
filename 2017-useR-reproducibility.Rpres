@@ -55,11 +55,12 @@ Science retracts gay marriage paper
   canvassers can sway people's opinions about gay marriage
 
 * Original survey data was not made available for independent
-  reproduction of results (and survey incentives were misrepresented, and
-  sponsorship statements were false)
+  reproduction of results (additionally, survey incentives were misrepresented and
+  sponsorship statements were incorrect)
 
 * Two Berkeley grad students attempted to replicate the study and
-  discovered serious issues with the data (likely fabricated, and how they were fabricated).
+  discovered serious issues with the data (were able to show data 
+  almost certainly fabricated, and how they were generated).
 
 Source:
 http://news.sciencemag.org/policy/2015/05/science-retracts-gay-marriage-paper-without-lead-author-s-consent
@@ -74,6 +75,7 @@ Lack of reproducibility in science causes significant issues
 * For other researchers in the community
 * For public policy
 * _For patients_
+
 
 Seizure study retracted after authors realize data got "terribly mixed"
 =====
@@ -121,11 +123,12 @@ incremental: true
 
 Methods are codified by definition, yet still challenging to reproduce
 
-* _Dependency hell_: Most software has recursive and differing dependencies.  Any one can fail to install, conflict with those of others, and their exact versions can affect the results.
-* _Documentation gaps_: Code can easily be very difficult to understand if not documented. Documentation gaps and errors may be harmless for experts, but are often fatal for "method novices".
-* _Unpredictable evolution_: Scientific software evolves constantly and often in drastic rather than incremental ways. As a result, results, algorithms, and parameters can change in unpredictable ways, and can render code to fail after it worked only a short while months ago.
+* _Dependency hell_: Most software has large (often invisible) recursive dependencies.  Any one can fail to install, conflict with those of others, and the exact versions can affect results.
+* _Documentation gaps_: Code can be very difficult to understand if not documented. Documentation gaps and errors may be harmless for experts, but are often fatal for "method novices".
+* _Unpredictable evolution_: Scientific software evolves constantly and often in drastic rather than incremental ways. As a result, results, algorithms, and parameters can change in unpredictable ways, and can render code to fail after it worked only a short while ago.
 
 See [an experiment on reproducing reproducible computational research](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
+
 
 Overcoming the training gap
 =====
@@ -140,6 +143,7 @@ Overcoming the training gap
   bioinformaticians, open-science activists, programmers, graduate
   students, postdocs, untenured and tenured faculty
 * Outcome: open source, reusable curriculum for a two-day workshop on reproducibility for computational research
+
 
 Current Syllabus
 =====
@@ -159,9 +163,11 @@ Current Syllabus
 * Automated testing and integration testing
 * Sharing, publishing, and archiving for data and code
 
+
 Exercise: Motivating reproducibility
 =====
 type: titleonly
+
 
 Exercise: Motivating reproducibility
 =====
@@ -179,14 +185,12 @@ Part 1: Analyze + document
 =====
 type: prompt
 
-Complete the following task and **write instructions / documentation** for your
-collaborator to reproduce your work starting with the original dataset
-(`data/gapminder-5060.csv`).
+Complete the following task using whatever workflow and tools you feel most comforable with. Your solution must include a brief write-up / documentation such that you could pass the file(s) to a collaborator and they would be able to reproduce your results.
 
-1. Download material: http://bit.ly/2sEPe4z -> [Full Link](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/cbb-retreat/master/material/data/gapminder-5060.csv) 
+1. Download the gapminder data (`gapminder-5060.csv`) from: http://bit.ly/2sEPe4z -> [Full Link](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/cbb-retreat/master/material/data/gapminder-5060.csv) 
 
 2. Visualize life expectancy over time for Canadians in the 1950s and 1960s using
-a line plot.
+a line plot of these data.
 
 3. Something should be clearly wrong with your plot, figure out (and document) what this is and come up with a fix.
 
@@ -198,14 +202,14 @@ Part 2: Swap + discuss
 =====
 type: prompt
 
-Introduce yourself to your collaborator (neighbor).
+Introduce yourself to your collaborator(s) /neighbor(s).
 
-1. Swap instructions / documentation with your collaborator. As you read it over think about how you would attempt to reproduce their work.
+1. Swap instructions / documentation with your collaborator and read through their results and write-up. As you read it over think about how you would attempt to reproduce their work.
 
 2. If your collaborator/neighbor does not have or is unfamiliar with the software you used we
-encourage you to given them a brief explination of what it is and why you chose it. (Remember, this could be part of the irreproducibility problem!)
+encourage you to given them a brief explination of what it is and why you chose it. (Remember, this is often part of the irreproducibility problem!)
 
-3. Then, talk to each other about challenges you faced (or didn't face) or why
+3. Finally, talk to each other about challenges you faced (or didn't face) or why
 you were or weren't able to reproduce their work.
 
 
@@ -225,52 +229,57 @@ In a "real life" setting:
     - caught further errors and had to re-create the analysis?
     - you had to revert back to the original dataset?
 
+
 Four facets of reproducibility
 =====
 type: titleonly
 
+
 Four facets of reproducibility
 =====
 
-1. **Documentation:** difference between binary files (e.g. docx) and text files and
-why text files are preferred for documentation
-    - markdown is a great format to document your workflow so that anyone can pick up
-    your data and follow what you are doing
-    - Use *literate programming* so that your analysis and your results are
-    tightly connected
+1. **Documentation:** explanation and commenting of why and how an analysis is carried 
+out in human readable language
 
 2. **Organization:** tools to organize your projects so that you don't have a single
 folder with hundreds of files
 
-3. **Automation:** the power of scripting to create automated data analyses
+3. **Automation:** the power of scripting to create automated (and self documenting) data analyses
 
 4. **Dissemination:** publishing is not the end of your analysis, rather it is a way
 station towards your future research and the future research of others
 
-Executable documentation
+
+Documentation
 =====
 type: titleonly
+
+
+Accessible documentation
+=====
+
+Documentation takes many forms (e.g. the README of a github repo, Rd files in an R package) depending on your project, be it a Journal Article, a blog post or an R - tou should strive to make it as frictionless as possible for new and existings users to access any documentation you create (plain text is always a safe assumption, Microsoft Word is not).
+
+
 
 Literate Programming
 =====
 
-Provenance with results pasted into manuscript:
+Provenance of *copy and pasted* figure:
 ![Figure copy&pasted into MS Word](media/Graph-pasted-in-Word.png)
-
-* Which code?
-* Which data?
-* Which context?
 
 ***
 
-vs. Provenance of figures with Rmarkdown reports:
+vs. Provenance of `Rmarkdown` figure:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
-Demo - Literate Programming
+
+Demo - Literate Programming with RMarkdown
 =====
 type: titleonly
 
-Executable data integrity checks
+
+Data sanity checks
 =====
 
 <br/>
@@ -278,7 +287,7 @@ Executable data integrity checks
 gap_5060 <- read.csv("material/data/gapminder-5060.csv")
 ```
 
-Life expectancy shouldn't exceed even the most extreme age observed for humans.
+Reported life expectancy shouldn't exceed the most extreme age observed for humans.
 
 ```{r, echo=TRUE, eval=TRUE, include=TRUE}
 if (any(gap_5060$lifeExp > 150)) {
@@ -286,7 +295,8 @@ if (any(gap_5060$lifeExp > 150)) {
 }
 ```
 
-Executable data integrity checks
+
+More formal data integrity checks
 =====
 
 <br/>
@@ -298,9 +308,11 @@ expect_false(any(gap_5060$lifeExp > 150),
             "improbably high life expectancies")
 ```
 
-Naming your files
+
+Organization
 =====
 type: titleonly
+
 
 Research projects grow
 =====
@@ -308,12 +320,14 @@ Research projects grow
 <br/><br/>
 - There are going to be files. _Lots of files._
 - They will change over time.
-- They will have differing relationships to each other.
+- They will have complex relationships to each other, that will also change over time.
 
-File organization and naming are effective weapons against chaos.
+File organization and naming are effective (and necessary) weapons against chaos.
+
 
 Three key principles for (file) names
 =====
+incremental: true
 
 * Machine readable
     - easy to search for files later
@@ -327,6 +341,7 @@ Three key principles for (file) names
     - left pad numbers with zeros
     - use ISO 8601 standard (YYYY-mm-dd) for dates
 
+
 Exercise
 =====
 type: prompt
@@ -335,7 +350,8 @@ type: prompt
 Your data files contain readings from a well plate, one file per well,
 using a specific assay run on a certain date, after a certain treatment.
 
-* Devise a naming scheme for the files that is both "machine" and "human" readable.
+* Devise a naming scheme for the files that is **both** "machine" and "human" readable.
+
 
 Example:
 =====
@@ -380,9 +396,6 @@ colnames(meta) <- c("date", "assay", "experiment",
 meta[,1:4]
 ```
 
-Organizing your files
-=====
-type: titleonly
 
 Best practices for file organization
 =====
@@ -391,6 +404,7 @@ class: centered-image
 [![Noble (2009) “A Quick Guide to Organizing Computational Biology Projects.” PLoS Computational Biology 5 (7): e1000424](http://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=info:doi/10.1371/journal.pcbi.1000424.g001)](http://dx.doi.org/10.1371/journal.pcbi.1000424)
 
 <small>Noble, William Stafford. 2009. “[A Quick Guide to Organizing Computational Biology Projects](http://dx.doi.org/10.1371/journal.pcbi.1000424).” PLoS Computational Biology 5 (7): e1000424.</small>
+
 
 A data science project using R
 =====
@@ -421,26 +435,24 @@ title: false
 +-- make.R
 ```
 
-Some principles for file organization
+Some organizing principles for files
 =====
 
 - `data-raw`: the original data, you shouldn't edit or otherwise alter any of
 the files in this folder.
-- `data-output`: intermediate datasets that will be generated by the
-analysis.
-      - We write them to CSV files so we could share or archive them,
-      for example if they take a long time (or expensive resources) to generate.
+- `data-output`: intermediate datasets that will be generated by theanalysis.
+      - We write them to CSV files so we could share or archive them,for example if they take a long time (or expensive resources) to generate.
 - `fig`: the folder where we can store the figures used in the manuscript.
 - `R`: our R code (the functions)
     - Often easier to keep the prose separated from the code.
-    - If you have a lot of code (and/or manuscript is long), it's easier
-    to navigate.
-- `tests`: the code to test that our functions are behaving properly and that
-all our data is included in the analysis.
+    - If you have a lot of code (and/or manuscript is long), it's easier to navigate.
+- `tests`: the code to test that our functions are behaving properly and that all our data is included in the analysis.
+
 
 Automation
 =====
 type: titleonly
+
 
 Write functions to automate everything
 =====
