@@ -727,3 +727,4 @@ Further Resources
 * [Data Analysis for the Life Sciences](http://simplystatistics.org/?p=4311) - a book completely written in R markdown
 * FitzJohn et al. 2014. “[How Much of the World Is Woody?](http://dx.doi.org/10.1111/1365-2745.12260)” The Journal of Ecology. doi:10.1111/1365-2745.12260. [Start to end replicable analysis on Github](https://github.com/richfitz/wood).
 * Boettiger et al. “[RNeXML: A Package for Reading and Writing Richly Annotated Phylogenetic, Character, and Trait Data in R](http://dx.doi.org/10.1111/2041-210X.12469).” Methods in Ecology and Evolution, September. [Code archive and DOI assignment at Zenodo](http://dx.doi.org/10.5281/zenodo.13131)
+* Hart et al. 2016 "[Ten Simple Rules for Digital Data Storage](https://doi.org/    10.1371/journal.pcbi.1005097)". PLOS Computational Biology. 
