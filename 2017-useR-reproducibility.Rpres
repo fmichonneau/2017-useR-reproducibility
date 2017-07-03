@@ -35,6 +35,7 @@ Reproducibility crisis
 * Effect size overestimation is common
 
 ***
+
 [![Nature Special Issue on Challenges in Irreproducible Research](media/Nature-special-issue.png)](http://www.nature.com/nature/focus/reproducibility/index.html)
 
 
@@ -101,18 +102,20 @@ Lack of reproducibility in science causes significant issues
 Reproducibility = Accelerating science, including your own
 =====
 
-<p/>
-[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
-<small>Bruno Oliviera</small>
+<br><br>
 
-***
-
-<p/>
 * Research that is difficult to reproduce impedes your future self, and your lab.
 * More reproducible research is faster to report, in particular when research is dynamic. (Think data, tools, parameters, etc.)
 * More reproducible research is also faster to resume or to build on by others.
 
 <p class="highlight" style="margin-top: 10px;">Reproducible science accelerates scientific progress.</p>
+
+***
+
+<br><br>
+
+[![B. Oliviera, Geeks and repetitive tasks](media/gvng.jpg)](https://plus.google.com/+BrunoOliveira/posts/MGxauXypb1Y)
+<small>Bruno Oliviera</small>
 
 
 Computational research 
@@ -125,21 +128,26 @@ Methods are codified by definition, yet still challenging to reproduce
 * _Documentation gaps_: Code can easily be very difficult to understand if not documented. Documentation gaps and errors may be harmless for experts, but are often fatal for "method novices".
 * _Unpredictable evolution_: Scientific software evolves constantly and often in drastic rather than incremental ways. As a result, results, algorithms, and parameters can change in unpredictable ways, and can render code to fail after it worked only a short while months ago.
 
-See [an experiment on reproducing reproducible computational research](https://storify.com/hlapp/reproducibility-repeatability-bigthink)
+See [an experiment on reproducing reproducible computational research](https://storify.com/hlapp/reproducibility-repeatability-bigthink).
 
 Overcoming the training gap
 =====
+
+<br>
 
 ![Reproducible Science Curriculum Workshop & Hackathon Participants](media/IMG_1058.jpg)
 [![Reproducible Science Curriculum logo](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/Reproducible-Science-Hackathon-Dec-08-2014/master/logos/reproLogo-plustext.png)](https://github.com/Reproducible-Science-Curriculum)
 
 ***
 
+<br>
+
 * Curriculum development hackathon held December 11-14, 2014, at NESCent
 * 21 participants comprising statisticians, biologists,
   bioinformaticians, open-science activists, programmers, graduate
   students, postdocs, untenured and tenured faculty
-* Outcome: open source, reusable curriculum for a two-day workshop on reproducibility for computational research
+* Outcome: open source, reusable curriculum for a two-day workshop on
+  reproducibility for computational research
 
 Current Syllabus
 =====
@@ -183,7 +191,7 @@ Complete the following task and **write instructions / documentation** for your
 collaborator to reproduce your work starting with the original dataset
 (`data/gapminder-5060.csv`).
 
-1. Download material: http://bit.ly/2sEPe4z -> [Full Link](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/cbb-retreat/master/material/data/gapminder-5060.csv) 
+1. Download the data: http://bit.ly/2sEPe4z ([Full Link](https://raw.githubusercontent.com/Reproducible-Science-Curriculum/cbb-retreat/master/material/data/gapminder-5060.csv))
 
 2. Visualize life expectancy over time for Canadians in the 1950s and 1960s using
 a line plot.
@@ -202,7 +210,7 @@ Introduce yourself to your collaborator (neighbor).
 
 1. Swap instructions / documentation with your collaborator. As you read it over think about how you would attempt to reproduce their work.
 
-2. If your collaborator/neighbor does not have or is unfamiliar with the software you used we
+2. If your collaborator/neighbor does not have or is unfamiliar with the software/technology you used we
 encourage you to given them a brief explination of what it is and why you chose it. (Remember, this could be part of the irreproducibility problem!)
 
 3. Then, talk to each other about challenges you faced (or didn't face) or why
@@ -254,6 +262,8 @@ type: titleonly
 Literate Programming
 =====
 
+<br>
+
 Provenance with results pasted into manuscript:
 ![Figure copy&pasted into MS Word](media/Graph-pasted-in-Word.png)
 
@@ -263,7 +273,9 @@ Provenance with results pasted into manuscript:
 
 ***
 
-vs. Provenance of figures with Rmarkdown reports:
+<br>
+
+Provenance of figures with R Markdown reports:
 [![Figure generating code following by generated figure](media/Graph-from-Rmarkdown.png)](https://github.com/Reproducible-Science-Curriculum/rr-organization1/raw/master/files/lit-prog/countryPick4.pdf)
 
 Demo - Literate Programming
