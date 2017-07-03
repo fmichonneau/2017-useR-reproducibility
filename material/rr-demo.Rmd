@@ -1,0 +1,45 @@
+---
+title: "Comparison of life expenctancy for three countries"
+author: "your name"
+params:
+  country_1: Belgium
+  country_2: !r sample(c("United States", "Mexico", "Canada"), 1)
+---
+
+
+```{r setup}
+library(tidyverse)
+
+gap <- read.csv("data/gapminder.csv")
+
+plot_country <- function(gap, ctry) {
+    ctry <- match.arg(ctry, unique(gap$country),  several.ok = TRUE)
+    gap %>%
+        filter(country %in% ctry) %>%
+        ggplot(aes(x = year, y = lifeExp, colour = country, size = gdpPercap)) +
+        geom_point() +
+        labs(title = paste(ctry, collapse = ", "),
+                           subtitle = "Change in life expectancy and GDP per capita")
+}
+
+country_3 <- "South Africa"
+
+
+```
+
+We compare the change in life expectancy for `r params$country_1`, `r params$country_2` and `r country_3`:
+
+```{r plot-country, echo=FALSE}
+plot_country(gap, c(params$country_1, params$country_2, country_3))
+```
+
+
+```{r table-country}
+gap %>%
+    filter(country %in% c(params$country_1, params$country_2,
+                          country_3)) %>%
+    select(country, lifeExp, pop,  gdpPercap) %>%
+    group_by(country) %>%
+    summarise_all(mean) %>%
+    kable()
+```
