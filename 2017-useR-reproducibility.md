@@ -635,8 +635,24 @@ Where archive & publish?
 R packages to help you
 =====
 
-* use [rfigshare](https://github.com/ropensci/rfigshare) to upload your datasets directly to [Figshare](https://figshare.com)
-* 
+### Documentation
+
+* **`roxygen`**: document your functions (easy to read, even if project not organized as package)
+* **`bookdown`**: provides support for cross-referencing, citations, etc. Works well even if output is not a book
+
+### Organization
+
+* **`projectTemplate`** useful to automate project setup
+
+***
+
+### Automation
+
+* **[`remake`](https://github.com/richfitz/remake)** (not on CRAN), excellent package to build robust reproducible analyses.
+
+### Dissemination
+
+* **[`rfigshare`](https://github.com/ropensci/rfigshare)**: upload your datasets directly to [Figshare](https://figshare.com)
 
 University libraries try to help
 =====
