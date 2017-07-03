@@ -642,11 +642,6 @@ Where archive & publish?
 * Institutional repository
 * ~~Journal supplementary materials~~
 
-R packages to help you
-=====
-
-* use [rfigshare](https://github.com/ropensci/rfigshare) to upload your datasets directly to [Figshare](https://figshare.com)
-* 
 
 University libraries try to help
 =====
@@ -714,6 +709,29 @@ incremental: true
     - It's easy and little work while the project is still small and contains few files.
     - Now all you're doing is reproducible. No painful considerations when it comes to sharing stuff.
     - Your future self will reap the benefits.
+
+R packages to help you
+=====
+
+### Documentation
+
+* **`roxygen`**: document your functions (easy to read, even if project not organized as package)
+* **`bookdown`**: provides support for cross-referencing, citations, etc. Works well even if output is not a book
+
+### Organization
+
+* **`projectTemplate`** useful to automate project setup
+
+***
+
+### Automation
+
+* **[`remake`](https://github.com/richfitz/remake)** (not on CRAN), excellent package to build robust reproducible analyses.
+
+### Dissemination
+
+* **[`rfigshare`](https://github.com/ropensci/rfigshare)**: upload your datasets directly to [Figshare](https://figshare.com)
+
 
 Acknowledgements
 =====
