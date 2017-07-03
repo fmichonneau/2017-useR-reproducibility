@@ -37,6 +37,7 @@ Reproducibility crisis
 ***
 [![Nature Special Issue on Challenges in Irreproducible Research](media/Nature-special-issue.png)](http://www.nature.com/nature/focus/reproducibility/index.html)
 
+
 Reproducibility matters
 =====
 incremental: true
@@ -54,14 +55,15 @@ Science retracts gay marriage paper
   canvassers can sway people's opinions about gay marriage
 
 * Original survey data was not made available for independent
-  reproduction of results (and survey incentives misrepresented, and
-  sponsorship statement false)
+  reproduction of results (and survey incentives were misrepresented, and
+  sponsorship statements were false)
 
 * Two Berkeley grad students attempted to replicate the study and
-  discovered that the data must have been faked.
+  discovered serious issues with the data (likely fabricated, and how they were fabricated).
 
 Source:
 http://news.sciencemag.org/policy/2015/05/science-retracts-gay-marriage-paper-without-lead-author-s-consent
+
 
 Reproducibility matters
 =====
@@ -83,6 +85,7 @@ Preterm Neonates** ([doi:10.1007/s12098-010-0331-7](http://dx.doi.org/10.1007/s1
 
 Source: [Retraction Watch](http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/)
 
+
 Reproducibility matters
 =====
 
@@ -93,6 +96,7 @@ Lack of reproducibility in science causes significant issues
 * For policy making
 * For patients
 * _For oneself as a researcher_
+
 
 Reproducibility = Accelerating science, including your own
 =====
@@ -110,8 +114,12 @@ Reproducibility = Accelerating science, including your own
 
 <p class="highlight" style="margin-top: 10px;">Reproducible science accelerates scientific progress.</p>
 
-Computational research: codified methods yet challenging to reproduce
+
+Computational research 
 =====
+incremental: true
+
+Methods are codified by definition, yet still challenging to reproduce
 
 * _Dependency hell_: Most software has recursive and differing dependencies.  Any one can fail to install, conflict with those of others, and their exact versions can affect the results.
 * _Documentation gaps_: Code can easily be very difficult to understand if not documented. Documentation gaps and errors may be harmless for experts, but are often fatal for "method novices".
