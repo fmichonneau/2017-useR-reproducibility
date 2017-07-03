@@ -385,12 +385,20 @@ Exercise
 =====
 type: prompt
 
-<br/><br/>
-Your data files contain readings from a well plate, one file per well,
-using a specific assay run on a certain date, after a certain treatment.
+<font size="5">
+Lets assume that you are collecting data on the amount of mRNA for a particular gene (BRAF) that is being produced by different strains of transgenic *E. coli* created via transformations using several different plasmids.
 
-* Devise a naming scheme for the files that is **both** "machine" and "human" readable.
+Devise a naming scheme for the files that is **both** "machine" and "human" readable. File names should contain the following information:
 
+* Assays are performed on different days
+* These particular assays are for BRAF mRNA
+* Different plamids were used to transform the *E. coli* (e.g. Plasmid CL56)
+* Readings come from a [plate containing multiple wells](https://c1.staticflickr.com/7/6118/6252392655_c4285c5aa6_b.jpg), 
+  * Rows (e.g. A, B, C) represent samples from different cultures (but the same strain) 
+  * Columns (e.g. 1, 2, 3) represent samples from the same culture (replicates) 
+  * We obtain one *csv* file per well.
+
+</font>
 
 Example:
 =====
@@ -407,13 +415,10 @@ $ ls *Plsmd*
 ```
 
 ```{r, eval=FALSE}
-> list.files(pattern = "Plsmd") %>% head
+> list.files(pattern = "MutFrac_A") %>% head
 [1] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A01.csv
 [2] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A02.csv
 [3] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_A03.csv
-[4] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B01.csv
-[5] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B02.csv
-[6] 2013-06-26_BRAFASSAY_Plsmd-CL56-1MutFrac_B03.csv
 ```
 
 Example:
@@ -573,10 +578,12 @@ Use informatively named files
 2014-03-14_manuscriptFish_PLOSpublished.doc
 ```
 
+
 Version Control -- OK
 ====
 
 Or zip the entire directory of your project files everytime you make a change, and save with date
+
 
 Version Control -- Best
 ====
@@ -584,6 +591,7 @@ Version Control -- Best
 Use a version control system (e.g. git)
 
 ![](media/motivation-01.png)
+
 
 Why use git and GitHub?
 ====
@@ -614,6 +622,7 @@ RStudio's Git intergration
 Dissemination - Sharing, publishing, archiving
 =====
 type: titleonly
+
 
 Why share / archive data & code?
 =====
@@ -655,6 +664,7 @@ left: 70%
 
 <p style="font-size: 75%">Figure 1. Distribution of reporting errors per paper for papers from which data were shared and from which no data were shared.</p>
 
+
 Where archive & publish?
 =====
 
@@ -663,6 +673,7 @@ Where archive & publish?
 * Generic repository ([Dryad](http://datadryad.com), [Figshare](http://figshare.com), [Zenodo](http://zenodo.org))
 * Institutional repository
 * Journal supplementary materials
+
 
 Where archive & publish?
 =====
@@ -681,6 +692,7 @@ title: false
 <!-- Replace with your university library's data management guide -->
 <iframe width="100%" height="700px" src="http://library.duke.edu/data/guides/data-management"></iframe>
 
+
 How to share, publish: file formats
 =====
 
@@ -695,9 +707,11 @@ How to share, publish: file formats
 * data as PDFs or images
 * data in Word documents
 
+
 Put a license on creative works
 =====
 type: titleonly
+
 
 Software licensing guide
 =====
@@ -709,9 +723,11 @@ left: 70%
 
 > Morin, Andrew, Jennifer Urban, and Piotr Sliz. 2012. “[A Quick Guide to Software Licensing for the Scientist-Programmer.](http://dx.doi.org/10.1371/journal.pcbi.1002598)” PLoS Computational Biology 8 (7): e1002598.
 
+
 Don't put a license on facts (a.k.a. data)
 =====
 type: titleonly
+
 
 Licenses versus community norms
 =====
@@ -721,6 +737,7 @@ Licenses versus community norms
 From the [Panton Principles](http://pantonprinciples.org/faq/#Q11_What_are_community_norms_and_why_are_they_important):
 > [In] the scholarly research community the act of citation is a commonly held community norm when reusing another community member’s work. [...] A well functioning community supports its members in their application of norms, whereas licences can only be enforced through court action and thus invite people to ignore them when they are confident that this is unlikely.
 
+
 Good - Better - Best
 =====
 
@@ -728,6 +745,10 @@ Good - Better - Best
 <br/>
 [![Peng, R. D. (2011) Reproducible Research in Computational Science](media/Good-better-best.jpg)](http://dx.doi.org/10.1126/science.1213847)
 Peng, R. D. “[Reproducible Research in Computational Science](http://dx.doi.org/10.1126/science.1213847)” Science 334, no. 6060 (2011): 1226–1227
+
+
+
+
 
 Forming reproducible habits pays off
 =====
@@ -773,6 +794,7 @@ Acknowledgements
     * Center for Genomic & Computational Biology (GCB), Duke University
     * Moore Foundation
 
+
 Eating our dogfood: text formats, version control, sharing
 =====
 <p/>
@@ -791,7 +813,11 @@ Further Resources
 =====
 
 * Entire [suppl. doc](http://www.sciencemag.org/content/suppl/2015/04/29/348.6234.567.DC1/Finnegan.SM.pdf) generated from Rmarkdown: Finnegan et al. 2015. “[Paleontological Baselines for Evaluating Extinction Risk in the Modern Oceans](http://dx.doi.org/10.1126/science.aaa6635).” Science 348 (6234): 567–70.
+
 * [Data Analysis for the Life Sciences](http://simplystatistics.org/?p=4311) - a book completely written in R markdown
+
 * FitzJohn et al. 2014. “[How Much of the World Is Woody?](http://dx.doi.org/10.1111/1365-2745.12260)” The Journal of Ecology. doi:10.1111/1365-2745.12260. [Start to end replicable analysis on Github](https://github.com/richfitz/wood).
+
 * Boettiger et al. “[RNeXML: A Package for Reading and Writing Richly Annotated Phylogenetic, Character, and Trait Data in R](http://dx.doi.org/10.1111/2041-210X.12469).” Methods in Ecology and Evolution, September. [Code archive and DOI assignment at Zenodo](http://dx.doi.org/10.5281/zenodo.13131)
+
 * Hart et al. 2016 "[Ten Simple Rules for Digital Data Storage](https://doi.org/    10.1371/journal.pcbi.1005097)". PLOS Computational Biology. 
