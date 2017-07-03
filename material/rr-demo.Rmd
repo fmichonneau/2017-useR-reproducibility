@@ -37,7 +37,6 @@ We compare the change in life expectancy for `r params$country_1`, `r params$cou
 plot_country(gap, c(params$country_1, params$country_2, country_3))
 ```
 
-
 ```{r table-country}
 gap %>%
   filter(country %in% c(params$country_1, params$country_2, country_3)) %>%
@@ -46,3 +45,13 @@ gap %>%
   summarise_all(mean) %>%
   knitr::kable()
 ```
+
+A few new things are happening in this document:
+
+- The use of parameters to change things in only 1 place
+- The use of R functions within parameters with the `!r` notation
+- The use of functions to generate plots, making it easier to do:
+    - type checking
+    - reduce code repetition
+- The use of `knitr::kable` to generate nicely formatted (simple) tables within Rmarkdown documents
+
