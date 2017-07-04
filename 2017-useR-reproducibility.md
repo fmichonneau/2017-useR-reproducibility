@@ -24,6 +24,14 @@ Tracy Teal, Data Carpentry
 
 
 
+Materials
+=====
+
+- Website: http://bit.ly/user2017_ors
+- Slides: http://bit.ly/user2017_ors_slides
+- GitHub: http://bit.ly/user2017_ors_repo
+
+
 Reproducibility crisis
 =====
 
