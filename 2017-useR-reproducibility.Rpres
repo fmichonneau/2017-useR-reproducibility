@@ -261,7 +261,13 @@ type: titleonly
 Accessible documentation
 =====
 
-Documentation takes many forms (e.g. the README of a github repo, Rd files in an R package) depending on your project, be it a Journal Article, a blog post or an R - you should strive to make it as frictionless as possible for new and existings users to access any documentation you create (plain text is always a safe assumption, Microsoft Word is not).
+Documentation takes many forms but the goal shoiuld always be to make it as frictionless as possible for new and existings users / readers / whomever to figure out what is going on.
+
+Making access easy is the most important thing 
+ * plain text is always a safe assumption, PDFs or Word is not
+ * clearly written and organized
+ * published and updated
+
 
 Literate Programming
 =====
